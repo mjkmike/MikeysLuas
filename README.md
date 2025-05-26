@@ -123,7 +123,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 
 ## Additional Commands for All Melee Jobs:
 ```
-/tpset /tp /mode - toggles TP set between a LowAcc and HighAcc set.
+/tpset /tp /mode - Cycles TP set between a LowAcc, MidAcc and HighAcc set.
                    this will be overwritten if you have a DT or resistance set etc. enabled.
                    this is disabled for PLD in favour of using Idle sets by default.
 /locktp          - locks or unlocks Main, Sub, Ranged and Ammo slots.
