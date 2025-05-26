@@ -1,8 +1,9 @@
 # Mikeys's LuAshitacast
 
 A combined LuAshitacast for Eventide (Lvl 75 era) that was originally based off of https://github.com/yzyii/luashitacast
-A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
+and  https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
+99% of this is rags work and I'm modifying what he has out there.  Please look at https://github.com/yzyii/luashitacast For latest horizon lua updates
 All jobs are fully implemented.
 
 The intention for these luas is to comprehensively cover all required game mechanics for 75-era content as almost every other lua I have found either does not implement or poorly implements functionality such as pdt / mdt / resist sets, spell interruption rate down (SIRD) / midcast delay, or different set toggling.
