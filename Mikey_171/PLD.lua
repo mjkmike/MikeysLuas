@@ -375,7 +375,7 @@ local sets = {
         Ear2 = 'Suppanomimi',
         Body = 'Haubergeon +1',
         Hands = 'Dusk Gloves +1',
-        Ring1 = 'Toreador\'s Ring',
+        Ring1 = 'Harmonius Ring',
         Ring2 = 'Rajas Ring',
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
