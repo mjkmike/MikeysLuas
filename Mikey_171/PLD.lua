@@ -505,7 +505,6 @@ profile.HandleAbility = function()
             gFunc.Equip('Back', 'Shadow Mantle')
         end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/locktp')
         gFunc.EquipSet(sets.ShieldBash)
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
