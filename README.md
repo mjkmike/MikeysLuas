@@ -1,4 +1,6 @@
-# Rag's LuAshitacast
+# Mikeys's LuAshitacast
+
+A combined LuAshitacast for Eventide (Lvl 75 era) that was originally based off of https://github.com/yzyii/luashitacast
 
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
@@ -19,12 +21,12 @@ These luas were designed to be used in HorizonXI and therefore features such as 
 - Download the entire directory From Code > Download ZIP or from Releases to the right.
 - Paste the **contents only** of the luashitacast-master folder (or luashitacast-1.0.0 etc.) into ..\\Game\\**config**\\addons\\luashitacast\\
 - Note that **config** in the path. there may not be a luashitacast directory there if you have never used it before - just create one.
-- Rename the Rag_5040 folder to [Your_Character_Name]_[Your_Character_ID]
+- Rename the Mikey_171 folder to [Your_Character_Name]_[Your_Character_ID]
 - [Your_Character_ID] may be obtained from another plugin such as MobDB or by creating a blank lua using /lac newlua and then replacing the created folder.
 - Edit Equipment Sets in [JOB].lua.
 - Edit Elemental Staves (NQ vs HQ), Obis and some conditional gear in gcmage.lua if you are using these luas for mage jobs.
 - Edit Fenrir's Earring in gcmelee.lua if you are using these luas for melee jobs.
-- Edit Aketons and Dream gear etc. and turn on or off additional logging in gcincluderag.lua.
+- Edit Aketons and Dream gear etc. and turn on or off additional logging in gcinclude.lua.
 - Make sure you fill out the fastcastValue correctly in your [JOB].lua if you are using any Fast Cast gear in the Precast set.
 - Make sure you fill out the maxMP values correctly in your [JOB].lua if you are using these luas for mage jobs.
 - The midcast delay assumes you use the PacketFlow plugin. If you don't use PacketFlow, adjust the values in gcmage.lua (or gcmelee.lua for melee jobs).

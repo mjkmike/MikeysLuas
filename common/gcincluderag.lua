@@ -37,7 +37,7 @@ Everything below can be ignored.
 --------------------------------
 ]]
 
-gcdisplay = gFunc.LoadFile('common\\gcdisplayrag.lua')
+gcdisplay = gFunc.LoadFile('common\\gcdisplay.lua')
 
 local gcinclude = {}
 
