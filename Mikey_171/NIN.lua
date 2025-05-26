@@ -91,9 +91,9 @@ local sets = {
         Hands = 'Ochiudo\'s Kote',
         Feet = 'Fuma Sune-Ate',
     },
-    Movement = {
-        
-    }
+    Movement_MDT = {
+
+    },
 
     DT = {
         Head = 'Arh. Jinpachi +1',
@@ -173,7 +173,8 @@ local sets = {
         Back = { Name = 'Traveler\'s Mantle', Augment = { [1] = 'INT+5'} },
 		Waist = 'Hachirin-no-Obi',
 		Legs = 'Yasha Hakama',
-        Feet = 'Koga Kyahan',},
+        Feet = 'Koga Kyahan',
+    },
     NinElemental = {
         Head = 'Ninja Hatsuburi',
 		Neck = 'Justice Badge',
