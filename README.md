@@ -1,5 +1,6 @@
-# Rag's LuAshitacast
+# Mikeys's LuAshitacast
 
+A combined LuAshitacast for Eventide (Lvl 75 era) that was originally based off of https://github.com/yzyii/luashitacast
 A combined LuAshitacast for HorizonXI (Lvl 75 era) that was originally based off of https://github.com/GetAwayCoxn/Luashitacast-Profiles
 
 All jobs are fully implemented.
@@ -94,6 +95,7 @@ This will work 99% of the time unless you have added your own logic and therefor
 /horizonmode - if you wish to use Horizon Mode in LuAshitacast to be 100% horizon approved,
                you can then use this alias to manually trigger a handle default gear equip
                using a key press!
+/craftset - Equips your craftset.  Please see set in gcincluderag to update
 ```
 
 ## Additional Commands for All Mage Jobs:
