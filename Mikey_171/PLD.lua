@@ -420,7 +420,6 @@ local sets = {
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
-        Body = 'Haubergeon',
         Body = 'Haubergeon +1',
         Hands = 'Battle Gloves',
         Ring1 = 'Harmonius Ring',
