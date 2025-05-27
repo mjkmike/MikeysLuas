@@ -397,9 +397,9 @@ profile.HandleDefault = function()
             if (garden_bangles ~= '' and environment.Time >= 6 and environment.Time < 18) then
                 gFunc.Equip('hands', garden_bangles)
             end
-            if (presidential_hairpin and conquest:GetOutsideControl()) then
-                gFunc.Equip('Head', 'President. Hairpin')
-            end
+            --if (presidential_hairpin and conquest:GetOutsideControl()) then
+            --    gFunc.Equip('Head', 'President. Hairpin')
+            --end
             if (dream_ribbon) then
                 gFunc.Equip('Head', 'Dream Ribbon')
             end

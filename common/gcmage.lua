@@ -91,7 +91,7 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcinclude.lua')
-conquest = gFunc.LoadFile('common\\conquest.lua')
+-- conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local gcmage = {}
 
@@ -262,14 +262,14 @@ function gcmage.DoCommands(args)
 
     if (player.MainJob == 'RDM') then
         if (args[1] == 'vert') then
-            if (conquest:GetOutsideControl()) then
-                print(chat.header('GCMage'):append(chat.message('Out of Region - using ConvertOOR set.')))
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac set ConvertOOR')
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
-            else
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Convert')
-                AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
-            end
+            -- if (conquest:GetOutsideControl()) then
+            --    print(chat.header('GCMage'):append(chat.message('Out of Region - using ConvertOOR set.')))
+            --    AshitaCore:GetChatManager():QueueCommand(-1, '/lac set ConvertOOR')
+            --    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
+            --else
+            --    AshitaCore:GetChatManager():QueueCommand(-1, '/lac set Convert')
+            --    AshitaCore:GetChatManager():QueueCommand(-1, '/lac disable all')
+            --end
             gcdisplay.CreateToggle('Lock', true)
             gcinclude.Message('Equip Lock', gcdisplay.GetToggle('Lock'))
         elseif (args[1] == 'csstun') then
@@ -349,11 +349,11 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
 
     if (equipMaxMP) then
         gFunc.EquipSet('IdleMaxMP')
-        if (conquest:GetOutsideControl()) then
-            if (republic_gold_medal and player.MainJob ~= 'BRD') then
-                gFunc.Equip('Neck', 'Rep.Gold Medal')
-            end
-        end
+        --if (conquest:GetOutsideControl()) then
+        --    if (republic_gold_medal and player.MainJob ~= 'BRD') then
+        --        gFunc.Equip('Neck', 'Rep.Gold Medal')
+        --    end
+        --end
     end
 
     if (player.MainJob == 'SMN') then
@@ -439,11 +439,11 @@ function gcmage.DoDefault(ninSJMMP, whmSJMMP, blmSJMMP, rdmSJMMP, drkSJMMP)
             restingMaxMP = true
             gcinclude.DoDefaultIdle()
             gFunc.EquipSet('IdleMaxMP')
-            if (conquest:GetOutsideControl()) then
-                if (republic_gold_medal) then
-                    gFunc.Equip('Neck', 'Rep.Gold Medal')
-                end
-            end
+            --if (conquest:GetOutsideControl()) then
+            --    if (republic_gold_medal) then
+            --        gFunc.Equip('Neck', 'Rep.Gold Medal')
+            --    end
+            -- end
             if (dark_staff ~= '') then
                 gFunc.Equip('Main', dark_staff)
             end
@@ -779,10 +779,10 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
     else
         if (gcdisplay.GetCycle('Mode') == 'Accuracy') then
             gFunc.EquipSet('NukeACC')
-            if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) and master_casters_bracelets then
-                if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
-                gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-            end
+            -- if ((player.MainJob == 'RDM') and conquest:GetOutsideControl()) and master_casters_bracelets then
+            --    if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
+            --    gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+            -- end
             if (environment.WeatherElement == 'Dark') and diabolos_earring then
                 gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
             end
@@ -837,10 +837,10 @@ function gcmage.EquipEnfeebling()
     local player = gData.GetPlayer()
 
     gFunc.EquipSet('Enfeebling')
-    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
-        if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
-        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-    end
+    --if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
+    --    if (log_conquest) then print(chat.header('GCMage'):append(chat.message('Out of Region - Using Mst.Cst. Bracelets'))) end
+    --    gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+    -- end
     if (environment.WeatherElement == 'Dark') and diabolos_earring then
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
@@ -869,9 +869,9 @@ function gcmage.EquipEnfeeblingACC(action)
     local player = gData.GetPlayer()
 
     gFunc.EquipSet('EnfeeblingACC')
-    if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
-        gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
-    end
+    --if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
+    --    gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
+    --end
     if (ObiCheck(action)) then
         local obi = NukeObiTable[action.Element]
         local obiOwned = NukeObiOwnedTable[action.Element]

@@ -8,7 +8,7 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcinclude.lua')
-conquest = gFunc.LoadFile('common\\conquest.lua')
+-- conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local gcmelee = {}
 

@@ -594,10 +594,10 @@ profile.HandleMidcast = function()
                 do return end
             end
             if (not ElementalDebuffs:contains(action.Name)) then
-                if (conquest:GetInsideControl()) then
-                    print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
-                    gFunc.Equip('Head', 'Republic Circlet')
-                end
+                --if (conquest:GetInsideControl()) then
+                --    print(chat.header('GCMage'):append(chat.message('In Region - Using Republic Circlet')))
+                --    gFunc.Equip('Head', 'Republic Circlet')
+                --end
             end
         end
     end

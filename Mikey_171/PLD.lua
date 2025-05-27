@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0.07 7% from gear
+local fastCastValue = 0.05 -- 0.07 7% from gear
 local cureCastValue = 0.39 -- 39% cast speed from materia
 local parade_gorget = true
 
@@ -31,7 +31,7 @@ local sets = {
         Ring1 = 'Bloodbead ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
-        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
+        Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = 'Glt. Leggings +1',
 		Ammo = 'Iron Arrow',
@@ -70,7 +70,7 @@ local sets = {
 		Ring2 = 'Harmonius Ring',
         Back = 'Boxer\'s Mantle',
         Waist = 'Warwolf Belt',
-        Legs = 'Crimson cuisses',
+        Legs = 'Homam Cosciales',
         Feet = 'Glt. Leggings +1',
     },
     Movement = {
@@ -224,7 +224,7 @@ local sets = {
     Precast = {
         -- Ear1 = 'Loquac. Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        -- Legs = { Name = 'Homam Cosciales', Priority = 120 },
+        Legs = { Name = 'Homam Cosciales', Priority = 120 },
     },
     Precast_Cure = {
 		ammo = 'Bone Arrow',
@@ -238,7 +238,7 @@ local sets = {
 		Ring2 = 'Hercules\' Ring',
         Waist = 'Jungle Sash',
 		Back = 'Resentment Cape',
-        Legs = 'Valor Breeches',
+        Legs = 'Homam Cosciales',
         Feet = 'Valor Leggings',
     },
     SIRD = {
@@ -265,7 +265,7 @@ local sets = {
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Boxer\'s Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
-        -- Legs = 'Homam Cosciales', -- 3
+        Legs = 'Homam Cosciales', -- 3
         Feet = 'Dusk Ledelsens', -- 2
         ammo = 'Iron Arrow',
     },
@@ -379,7 +379,7 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
-        Legs = 'Ryl.kgt. breeches',
+        Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens',
 		Ammo = 'Iron Arrow',
     },
@@ -394,7 +394,7 @@ local sets = {
         Ring2 = 'Rajas Ring',
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
-        Legs = 'Ryl.kgt. breeches',
+        Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens',
 		Ammo = 'Iron Arrow',
     },
@@ -409,7 +409,7 @@ local sets = {
 		Ring2 = 'Rajas Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Life Belt',
-        Legs = 'Ryl.kgt. breeches',
+        Legs = 'Homam Cosciales',
 		Feet = 'Dusk Ledelsens',
 		ammo = 'Iron Arrow',	
     },
