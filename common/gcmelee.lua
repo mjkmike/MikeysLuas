@@ -132,18 +132,18 @@ function gcmelee.DoDefaultOverride()
 end
 
 function gcmelee.DoPrecast(fastCastValue, curePrecast)
+    
     if(curePrecast == true) then
         gFunc.EquipSet('Precast_Cure')
     else 
+        local spell = gData.GetAction();
+        gcinclude.DoShadows(spell);
+
         gFunc.EquipSet('Precast')
     end
     if (not lag) then
         return gcmelee.SetupMidcastDelay(fastCastValue)
-    end
-
-    local spell = gData.GetAction();
-    gcinclude.DoShadows(spell);
-
+    end    
     return 0
 end
 
