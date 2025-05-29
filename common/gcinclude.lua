@@ -7,6 +7,7 @@ local ducal_aketon = false
 
 local dream_boots = true
 local dream_mittens = true
+local dream_pants = true
 local skulkers_cape = false
 
 local load_stylist = false -- set to true to just load stylist on game start. this is purely for convenience since putting it in scripts doesn't work.
@@ -397,6 +398,10 @@ function gcinclude.DoItem()
         end
         if (skulkers_cape) then
             gFunc.Equip('Back', 'Skulker\'s Cape')
+        end
+    elseif (Item.Name == 'Orange Juice') then
+        if(dream_pants) then
+            gFunc.Equip('Legs', 'Dream Pants +1')
         end
     end
 end
