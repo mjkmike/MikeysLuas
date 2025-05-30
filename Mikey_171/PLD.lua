@@ -1,6 +1,6 @@
 local profile = {}
 
-local fastCastValue = 0.05 -- 0.07 7% from gear
+local fastCastValue = 0.07 -- 0.07 7% from gear
 local cureCastValue = 0.39 -- 39% cast speed from materia
 local parade_gorget = true
 
@@ -98,13 +98,13 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Koenig Schaller',
-        Neck = 'Jeweled Collar',
+        Neck = 'Shield Torque',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Koenig Cuirass',
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Merman\'s Ring',
-        Ring2 = { Name = 'Merman\'s Ring', Augment = { [1] = 'VIT+5'} },
+        Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
         Back = 'Lamia Mantle',
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Coral cuisses +1',
@@ -222,7 +222,7 @@ local sets = {
     },
 
     Precast = {
-        -- Ear1 = 'Loquac. Earring',
+        Ear1 = 'Loquac. Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Legs = { Name = 'Homam Cosciales', Priority = 120 },
     },
@@ -231,7 +231,7 @@ local sets = {
 		Head = 'Valor Coronet',
 		Neck = 'Parade Gorget',
 		Ear1 = 'Hospitaler Earring',
-		Ear2 = 'Hades Earring +1',
+		Ear1 = 'Loquac. Earring', -- FC
         Body = 'Valor Surcoat',
         Hands = 'Valor Gauntlets',
 		Ring1 = 'Mermaid Ring',
@@ -258,7 +258,7 @@ local sets = {
     Haste = {
         Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
         Neck = 'Willpower Torque',
-        -- Ear1 = 'Loquac. Earring', -- FC
+        Ear1 = 'Loquac. Earring', -- FC
         -- Ear2 = 'Magnetic Earring',
         Body = 'Koenig Cuirass',
         Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
@@ -292,7 +292,7 @@ local sets = {
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
         Head = 'Walahra turban',
         Neck = 'Harmonia\'s Torque',
-        -- Ear1 = 'Loquac. Earring',
+        Ear1 = 'Loquac. Earring',
         Ear2 = 'Hades Earring +1',
         Body = { Name = 'Valor Surcoat', Priority = -100 },
         Hands = 'Dusk Gloves +1',
@@ -472,6 +472,9 @@ local sets = {
         Legs = 'Magic Cuisses',
         Feet = 'Valor Leggings',
 		Ammo = 'Bone Arrow',
+	},
+    eepy = {
+		Neck = 'Berserker\'s Torque'
 	},
 }
 profile.Sets = sets

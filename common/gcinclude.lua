@@ -399,7 +399,7 @@ function gcinclude.DoItem()
         if (skulkers_cape) then
             gFunc.Equip('Back', 'Skulker\'s Cape')
         end
-    elseif (Item.Name == 'Orange Juice') then
+    elseif (item.Name == 'Orange Juice') then
         if(dream_pants) then
             gFunc.Equip('Legs', 'Dream Pants +1')
         end
