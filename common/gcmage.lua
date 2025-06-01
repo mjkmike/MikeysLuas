@@ -11,9 +11,9 @@ local dark_staff = 'Pluto\'s Staff'
 
 -- Set to true if you have the obi
 local karin_obi = true
-local dorin_obi = false
-local suirin_obi = false
-local furin_obi = false
+local dorin_obi = true
+local suirin_obi = true
+local furin_obi = true
 local hyorin_obi = true
 local rairin_obi = true
 local korin_obi = true
@@ -144,16 +144,15 @@ local ElementalStaffTable = {
 }
 
 local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin obi'
+    ['Fire'] = 'Hachirin-no-obi',
+    ['Earth'] = 'Hachirin-no-obi',
+    ['Water'] = 'Hachirin-no-obi',
+    ['Wind'] = 'Hachirin-no-obi',
+    ['Ice'] = 'Hachirin-no-obi',
+    ['Thunder'] = 'Hachirin-no-obi',
+    ['Light'] = 'Hachirin-no-obi',
+    ['Dark'] = 'Hachirin-no-obi'
 }
-
 local NukeObiOwnedTable = {
     ['Fire'] = karin_obi,
     ['Earth'] = dorin_obi,

@@ -88,7 +88,7 @@ local sets = {
         Feet = 'Ninja Kyahan',
     },
     Movement = {
-        Hands = 'Ochiudo\'s Kote',
+        Hands = 'Dst. Mittens +1',
         Feet = 'Fuma Sune-Ate',
     },
     Movement_MDT = {
