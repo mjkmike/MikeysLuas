@@ -30,7 +30,7 @@ local sets = {
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Defending Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = 'Glt. Leggings +1',
@@ -47,7 +47,7 @@ local sets = {
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
@@ -67,8 +67,8 @@ local sets = {
         Body = 'Haubergeon +1',
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Defending Ring',
-		Ring2 = 'Harmonius Ring',
-        Back = 'Boxer\'s Mantle',
+		Ring2 = 'Shadow Ring',
+        Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Homam Cosciales',
         Feet = 'Glt. Leggings +1',
@@ -91,7 +91,7 @@ local sets = {
         Hands = 'Kng. Handschuhs',
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 }, -- 10
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Koenig Diechlings', Priority = 10 },
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
@@ -103,7 +103,7 @@ local sets = {
         Ear2 = 'Merman\'s Earring',
         Body = 'Koenig Cuirass',
         Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Merman\'s Ring',
+        Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
         Back = 'Lamia Mantle',
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
@@ -249,7 +249,7 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Defending Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Valor Breeches', Priority = 20 }, -- 10
         Feet = 'Mountain Gaiters', -- 5
@@ -264,7 +264,7 @@ local sets = {
         Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
         -- Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
         Legs = 'Homam Cosciales', -- 3
         Feet = 'Dusk Ledelsens', -- 2
@@ -314,7 +314,7 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Vilma\'s ring', -- -25
 		Ring2 = 'Serket Ring', -- -50
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Astral Rope',
         Legs = 'Valor Breeches', -- 10
         Feet = 'Mountain Gaiters', -- 5
@@ -343,7 +343,7 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Boxer\'s Mantle',
+        Back = 'Shadow Mantle',
         Waist = 'Astral Rope',
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters',

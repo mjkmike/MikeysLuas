@@ -22,7 +22,7 @@ local LockableEquipment = {
     ['Neck'] = T{'Opo-opo Necklace'},
     ['Ear1'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
     ['Ear2'] = T{'Reraise Earring', 'Republic Earring', 'Kingdom Earring', 'Federation Earring'},
-    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit'},
+    ['Body'] = T{'Custom Gilet +1', 'Custom Top +1', 'Magna Gilet +1', 'Magna Top +1', 'Savage Top +1', 'Elder Gilet +1', 'Wonder Maillot +1', 'Wonder Top +1', 'Mandra. Suit', 'Tidal Talisman'},
     ['Hands'] = T{},
     ['Ring1'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Warp Ring'},
     ['Ring2'] = T{'Anniversary Ring', 'Emperor Band', 'Chariot Band', 'Empress Band', 'Homing Ring', 'Tavnazian Ring', 'Dem Ring', 'Holla Ring', 'Mea Ring', 'Altep Ring', 'Yhoat Ring', 'Warp Ring'},
@@ -345,7 +345,7 @@ function gcinclude.DoDefaultOverride(isMelee)
     elseif (gcdisplay.IdleSet == 'Fight' and player.Status ~= 'Engaged') then
         gFunc.EquipSet('DT')
         gFunc.EquipSet('Movement')
-    elseif (gcdisplay.IdleSet == 'MDT') then
+    elseif (gcdisplay.IdleSet == 'MDT' and player.IsMoving == true) then
         gFunc.EquipSet('Movement')
         gFunc.EquipSet('Movement_MDT')
     end
