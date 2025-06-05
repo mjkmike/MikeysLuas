@@ -23,7 +23,7 @@ local shadow_mantle = true
 local sets = {
     Idle = {
         Head = 'displaced',
-        Body = 'Vermillion Cloak',
+        Body = 'Royal Cloak',
         Neck = 'Shield Torque',
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
