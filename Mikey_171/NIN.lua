@@ -7,7 +7,7 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local shinobi_ring = true
-local shinobi_ring_slot = 'Ring2'
+local shinobi_ring_slot = 'Ring1'
 
 local koga_tekko = true
 local koga_tekko_plus_one = false
@@ -89,7 +89,7 @@ local sets = {
     },
     Movement = {
         Hands = 'Dst. Mittens +1',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Ninja Kyahan',
     },
     Movement_MDT = {
 
@@ -140,7 +140,7 @@ local sets = {
 		Ring2 = 'Rajas Ring',
         Back = 'Shadow Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
-        Legs = 'Koga Hakama',
+        Legs = 'Byakko\'s Haidate',
         Feet = 'Dance shoes',
     },
 

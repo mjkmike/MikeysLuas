@@ -1,24 +1,20 @@
 local profile = {}
 
-local fastCastValue = 0.00 -- 0.07 7% from gear
-local cureCastValue = 0.39 -- 39% cast speed from materia
-local parade_gorget = true
-
-local hercules_ring = true
-local hercules_ring_slot = 'Ring1'
-
-local guardian_earring = true;
-local guardian_earring = 'Ear2'
-
--- Replace these with '' if you do not have them
-local gallant_leggings = 'Glt. Leggings +1'
-local valor_leggings = 'Valor Leggings'
-
-local arco_de_velocidad = false
+local fastCastValue = 0.07 -- 0.07 7% from gear
 
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
-local shadow_mantle = false
+local shadow_mantle = true
+
+local str_physical_spells = T{'Foot Kick','Sprout Smack','Wild Oats','Power Attack','Queasyshroom','Battle Dance','Feather Storm','Helldive','Bludgeon','Claw Cyclone','Screwdriver','Grand Slam','Smite of Rage','Pinecone Bomb','Jet Stream','Uppercut','Terror Touch','Mandibular Bite','Sickle Slash','Dimensional Death','Spiral Spin','Death Scissors','Seedspray','Body Slam','Hydro Shot','Frenetic Rip','Spinal Cleave','Hysteric Barrage','Asuran Claws','Cannonball','Disseverment','Ram Charge','Vertical Cleave','Final Sting','Goblin Rush','Vanity Dive','Whirl of Rage','Benthic Typhoon','Quad. Continuum','Empty Thrash','Delta Thrust','Heavy Strike','Quadrastrike','Tourbillion','Amorphic Spikes','Barbed Crescent','Bilgestorm','Bloodrake','Glutinous Dart','Paralyzing Triad','Thrashing Assault','Sinker Drill','Sweeping Gouge','Saurian Slide'}
+local BluMagDebuff = T{'Filamented Hold','Cimicine Discharge','Demoralizing Roar','Venom Shell','Light of Penance','Sandspray','Auroral Drape','Frightful Roar','Enervation','Infrasonics','Lowing','CMain Wave','Awful Eye','Voracious Trunk','Sheep Song','Soporific','Yawn','Dream Flower','Chaotic Eye','Sound Blast','Blank Gaze','Stinking Gas','Geist Wall','Feather Tickle','Reaving Wind','Mortal Ray','Absolute Terror','Blistering Roar','Cruel Joke'}
+local BluMagStun = T{'Head Butt','Frypan','Tail Slap','Sub-zero Smash','Sudden Lunge'};
+local BluMagBuff = T{'Cocoon','Refueling','Feather Barrier','Memento Mori','Zephyr Mantle','Warm-Up','Amplification','Triumphant Roar','Saline Coat','Reactor Cool','Plasma Charge','Regeneration','Animating Wail','Battery Charge','Winds of Promy.','Barrier Tusk','Orcish Counterstance','Pyric Bulwark','Nat. Meditation','Restoral','Erratic Flutter','Carcharian Verve','Harden Shell','Mighty Guard'}
+local BluMagSkill = T{'Metallic Body','Diamondhide','Magic Barrier','Occultation','Atra. Libations'}
+local BluMagDiffus = T{'Erratic Flutter','Carcharian Verve','Harden Shell','Mighty Guard'}
+local BluMagCure = T{'Pollen','Healing Breeze','Wild Carrot','Magic Fruit','Plenilune Embrace'}
+local BluMagEnmity = T{'Actinic Burst','Exuviation','Fantod','Jettatura','Temporal Shift'}
+local BluMagTH = T{'Actinic Burst','Dream Flower','Subduction'}
 
 local sets = {
     Idle = {
@@ -95,105 +91,20 @@ local sets = {
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 }, -- 5
     },
-    FireRes = { -- 137
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Cmn. Earring', -- 11
-        Ear2 = 'Cmn. Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Tarasque Mitts +1', -- 6
-        Ring1 = 'Triumph Ring', -- 10
-        Ring2 = 'Malflame Ring', -- 10
-        Back = 'Dino Mantle', -- 4
-        Waist = 'Water Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
-        Feet = 'Power Sandals', -- 7
+    FireRes = {
     },
-    IceRes = { -- 135
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Diamond Earring', -- 10
-        Ear2 = 'Omn. Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Feral Gloves', -- 4
-        Ring1 = 'Omniscient Ring', -- 10
-        Ring2 = 'Malfrost Ring', -- 10
-        Back = 'Ram Mantle +1', -- 6
-        Waist = 'Fire Belt', -- 20
-        Legs = 'Feral Trousers', -- 6
-        Feet = 'Blood Greaves', -- 21
+    IceRes = {
     },
-    LightningRes = { -- 138
-        Range = 'Lightning Bow +1', -- 7
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Robust Earring', -- 11
-        Ear2 = 'Robust Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Heavy Gauntlets',
-        Ring1 = 'Spinel Ring', -- 9
-        Ring2 = 'Malflash Ring', -- 10
-        Back = 'Gaia Mantle +1', -- 12
-        Waist = 'Earth Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
-        Feet = 'Dst. Leggings +1',
+    LightningRes = { 
     },
-    EarthRes = { -- 143
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Robust Earring', -- 11
-        Ear2 = 'Robust Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Robust Ring', -- 10
-        Ring2 = 'Maldust Ring', -- 10
-        Back = 'Gaia Mantle +1', -- 10
-        Waist = 'Wind Belt', -- 20
-        Legs = 'Beak Trousers +1', -- 7
-        Feet = 'Blood Greaves', -- 21
+    EarthRes = {
     },
-    WindRes = { -- 118
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Diamond Earring', -- 10
-        Ear2 = 'Omn. Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1',
-        Ring1 = 'Emerald Ring', -- 9
-        Ring2 = 'Malgust Ring', -- 10
-        Back = { Name = 'Valor Cape', Priority = 100 },
-        Waist = 'Ice Belt', -- 20
-        Legs = 'Coral Cuisses +1',
-        Feet = 'Blood Greaves', -- 21
+    WindRes = {
     },
-    WaterRes = { -- 128
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
-        Ear1 = 'Cmn. Earring', -- 11
-        Ear2 = 'Cmn. Earring', -- 11
-        Body = 'Assault Brstplate', -- 15
-        Hands = 'Coral Fng. Gnt. +1', -- 4
-        Ring1 = 'Communion Ring', -- 10
-        Ring2 = 'Malflood Ring', -- 10
-        Back = { Name = 'Valor Cape', Priority = 100 },
-        Waist = 'Lightning Belt', -- 20
-        Legs = 'Blood Cuisses', -- 21
-        Feet = 'Coral Greaves +1', -- 4
+    WaterRes = {
     },
     Evasion = {
         Head = 'Bahamut\'s Mask',
-        -- Hrotti
         -- Crimson Scale Mail
         Legs = 'Bahamut\'s Hose',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
@@ -431,29 +342,7 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
-
-    if (action.Name == 'Chivalry') then
-        return
-    end
-
     gFunc.EquipSet(sets.Hate)
-
-    if (action.Name == 'Holy Circle' and gallant_leggings ~= '') then
-        gFunc.Equip('Legs', gallant_leggings)
-    elseif (action.Name == 'Rampart') then
-        gFunc.EquipSet(sets.Rampart)
-        local environment = gData.GetEnvironment()
-        if (shadow_mantle and environment.DayElement == 'Dark') then
-            gFunc.Equip('Back', 'Shadow Mantle')
-        end
-    elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
-        AshitaCore:GetChatManager():QueueCommand(-1, '/locktp')
-        gFunc.EquipSet(sets.ShieldBash)
-    elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
-        gFunc.Equip('Legs', valor_leggings)
-    elseif (action.Name == 'Cover') then
-        gFunc.EquipSet(sets.Cover)
-    end
 end
 
 profile.HandleItem = function()
@@ -470,12 +359,11 @@ profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
     local action = gData.GetAction()
-    if (action.Name == 'Spirits Within') then
-        gFunc.EquipSet(sets.WS_Spirits)
-    end
 end
 
 profile.OnLoad = function()
+    gcinclude.SetAlias(T{'enmity'})
+    gcdisplay.CreateCycle('enmity', {[1] = 'Down', [2] = 'Up',})
     gcmelee.Load()
     gcmelee.SetIsDPS(false)
     profile.SetMacroBook()
@@ -486,6 +374,12 @@ profile.OnUnload = function()
 end
 
 profile.HandleCommand = function(args)
+    if (args[1] == 'enmity') then
+        gcdisplay.AdvanceCycle('enmity')
+        gcinclude.Message('enmity', gcdisplay.GetCycle('enmity'))
+    else
+        gcmelee.DoCommands(args)
+    end
     gcmelee.DoCommands(args)
 
     if (args[1] == 'horizonmode') then
@@ -497,26 +391,6 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
-    local cover = gData.GetBuffCount('Cover')
-
-    if (cover >= 1) then
-        gFunc.EquipSet(sets.Cover)
-    end
-
-    if (arco_de_velocidad) then
-        local environment = gData.GetEnvironment()
-        if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
-            gFunc.Equip('Range', 'Arco de Velocidad')
-        end
-    end
-
-    if (parade_gorget and player.HPP >= 85) then
-        gFunc.Equip('Neck', 'Parade Gorget')
-    end
-
-    if (hercules_ring and player.HPP <= 50) then
-        gFunc.Equip(hercules_ring_slot, 'Hercules\' Ring')
-    end
 
     gcmelee.DoDefaultOverride()
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))
@@ -528,36 +402,12 @@ profile.HandlePrecast = function()
     local action = gData.GetAction()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
 
-    local cheatDelay = 0
     if (player.SubJob == "RDM" and warlocks_mantle) then
-        if(action.Skill == 'Healing Magic') then 
-            cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue + 0.02, true)
-        else 
-            cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue 0.02)
-        end
+        cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
         gFunc.Equip('Back', 'Warlock\'s Mantle')
     else
-        if(action.Skill == 'Healing Magic') then 
-            cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue, true)
-        else 
-            cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue)
-        end
+        gcmelee.DoPrecast(fastCastValue)
     end
-
-    if (cheatDelay < 0) then
-        cheatDelay = 0
-    end
-    local function delayCheat()
-        if (target.Name == me) then
-            if (action.Name == 'Cure III') then
-                gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
-            elseif (action.Name == 'Cure IV') then
-                gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
-            end
-        end
-    end
-
-    delayCheat:once(cheatDelay)
 end
 
 profile.HandleMidcast = function()
@@ -568,39 +418,13 @@ profile.HandleMidcast = function()
     local me = AshitaCore:GetMemoryManager():GetParty():GetMemberName(0)
     
 
-    if (action.Skill == 'Healing Magic') then
+    if (action.Skill == 'Blue Magic') then
         gFunc.EquipSet(sets.Cure)
-    elseif (action.Skill == 'Divine Magic') then
-        if (action.Name == 'Flash') then
-            --local sentinel = gData.GetBuffCount('Sentinel')
-            --if (sentinel >= 1) then
-            --    gFunc.EquipSet(sets.Haste)
-            --else
-                gFunc.EquipSet(sets.Hate)
-                gFunc.EquipSet(sets.Hate_Flash)
-            --end
-        else
-            gFunc.EquipSet(sets.Divine)
-        end
     elseif (action.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.Haste)
         if (action.Name == 'Utusemi: Ichi') then
             gFunc.EquipSet(sets.Haste_Ichi)
         end
-    elseif (action.Skill == 'Enhancing Magic') then
-        gFunc.EquipSet(sets.Enhancing)
-    end
-
-    if (target.Name == me) then
-        if (action.Name == 'Cure III') then
-            gFunc.EquipSet(sets.Cheat_C3HPUp)
-        elseif (action.Name == 'Cure IV') then
-            gFunc.EquipSet(sets.Cheat_C4HPUp)
-        end
-    end
-
-    if (guardian_earring and player.HPP <= 25 and player.TP <= 1000) then
-        gFunc.Equip(guardian_sarring_slot, 'Guardian Earring')
     end
 end
 

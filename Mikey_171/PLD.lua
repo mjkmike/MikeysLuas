@@ -18,7 +18,7 @@ local arco_de_velocidad = false
 
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
-local shadow_mantle = false
+local shadow_mantle = true
 
 local sets = {
     Idle = {
@@ -27,7 +27,7 @@ local sets = {
         Neck = 'Shield Torque',
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
-        Hands = 'Kng. Handschuhs',
+        Hands = 'Kaiser handschuhs',
         Ring1 = 'Defending Ring',
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = 'Shadow Mantle',
@@ -44,7 +44,7 @@ local sets = {
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 25 },
         Body = 'Koenig Cuirass',
-        Hands = 'Kng. Handschuhs',
+        Hands = 'Kaiser handschuhs',
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 },
         Back = 'Shadow Mantle',
@@ -67,19 +67,21 @@ local sets = {
         Body = 'Haubergeon +1',
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Defending Ring',
-		Ring2 = 'Shadow Ring',
+		Ring2 = 'Harmonius Ring',
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Homam Cosciales',
         Feet = 'Glt. Leggings +1',
     },
     Movement = {
-        Hands = 'Kng. Handschuhs',
+        Hands = 'Kaiser handschuhs',
         Legs = 'Crimson Cuisses',
+        Feet = 'Koenig Schuhs',
     },
     Movement_MDT = {
         Hands = 'Coral Fng. Gnt. +1',
         Legs = 'Crimson Cuisses',
+        Feet = 'Koenig Schuhs',
     },
 
     DT = {
@@ -88,7 +90,7 @@ local sets = {
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 25 },
-        Hands = 'Kng. Handschuhs',
+        Hands = 'Kaiser handschuhs',
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 }, -- 10
         Back = 'Shadow Mantle',
@@ -449,7 +451,7 @@ local sets = {
         Ear1 = 'Pigeon Earring',
         Ear2 = 'Bloodbead Earring',
         Body = 'Koenig Cuirass',
-        Hands = 'Kng. Handschuhs',
+        Hands = 'Kaiser handschuhs',
         Ring1 = 'Sattva Ring',
 		Ring2 = { Name = 'Soil Ring', Augment = { [1] = 'VIT+5'} },
         Back = 'Resentment Cape',
@@ -497,6 +499,9 @@ gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
     local action = gData.GetAction()
+    if (action.Name == 'Majesty') then
+        return
+    end
 
     gFunc.EquipSet(sets.Hate)
 
