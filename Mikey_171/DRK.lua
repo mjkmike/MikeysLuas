@@ -7,16 +7,6 @@ local use_chaos_burgeonet_for_tp_during_souleater = true
 local parade_gorget = true
 local fenrirs_stone = true
 
--- Set to true if you have the obi
-local karin_obi = true
-local dorin_obi = false
-local suirin_obi = false
-local furin_obi = false
-local hyorin_obi = true
-local rairin_obi = true
-local korin_obi = true
-local anrin_obi = true
-
 local sets = {
     Idle = {
         Main = 'Tredecim Scythe',
@@ -392,28 +382,6 @@ Everything below can be ignored.
 
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
-local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin obi'
-}
-
-local NukeObiOwnedTable = {
-    ['Fire'] = karin_obi,
-    ['Earth'] = dorin_obi,
-    ['Water'] = suirin_obi,
-    ['Wind'] = furin_obi,
-    ['Ice'] = hyorin_obi,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = korin_obi,
-    ['Dark'] = anrin_obi
-}
-
 profile.HandleAbility = function()
     local action = gData.GetAction()
 
@@ -524,13 +492,7 @@ profile.HandleMidcast = function()
             gFunc.EquipSet(sets.Absorb)
         end
 
-        if (ObiCheck(action)) then
-            local obi = NukeObiTable[action.Element]
-            local obiOwned = NukeObiOwnedTable[action.Element]
-            if (obiOwned) then
-                gFunc.Equip('Waist', obi)
-            end
-        end
+        gcmelee.equipObi(action)
     end
 
     if (action.Skill ~= 'Ninjutsu' and gcdisplay.GetToggle('Hate')) then
@@ -542,49 +504,5 @@ profile.HandleMidcast = function()
     end
 end
 
-local NukeObiTable = {
-    ['Fire'] = 'Karin Obi',
-    ['Earth'] = 'Dorin Obi',
-    ['Water'] = 'Suirin Obi',
-    ['Wind'] = 'Furin Obi',
-    ['Ice'] = 'Hyorin Obi',
-    ['Thunder'] = 'Rairin Obi',
-    ['Light'] = 'Korin Obi',
-    ['Dark'] = 'Anrin Obi'
-}
-
-local NukeObiOwnedTable = {
-    ['Fire'] = nil,
-    ['Earth'] = nil,
-    ['Water'] = nil,
-    ['Wind'] = nil,
-    ['Ice'] = nil,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = nil,
-    ['Dark'] = anrin_obi
-}
-
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
-}
-
-function ObiCheck(action)
-    local element = action.Element
-    local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
-
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
-end
 
 return profile

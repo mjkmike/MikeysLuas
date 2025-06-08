@@ -21,26 +21,6 @@ local fenrirs_stone = false -- Used for Evasion at night
 local night_time_eva_pants = ''
 local dusk_to_dawn_eva_pants = 'Koga Hakama'
 
--- Leave as '' if you do not have the staff.
-local fire_staff = ''
-local earth_staff = ''
-local water_staff = ''
-local wind_staff = ''
-local ice_staff = ''
-local thunder_staff = ''
-local light_staff = ''
-local dark_staff = ''
-
--- Set to true if you have the obi
-local karin_obi = true
-local dorin_obi = true
-local suirin_obi = true
-local furin_obi = true
-local hyorin_obi = true
-local rairin_obi = true
-local korin_obi = true
-local anrin_obi = true
-
 local sets = {
     Idle = {
         Head = 'Arh. Jinpachi +1',
@@ -97,7 +77,7 @@ local sets = {
 
     DT = {
         Head = 'Arh. Jinpachi +1',
-        Neck = 'Evasion Torque',
+        Neck = 'Peacock Charm',
         Ear1 = 'Pigeon Earring',
         Ear2 = 'Bloodbead Earring',
         Body = 'Arhat\'s Gi +1',
@@ -107,7 +87,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Dst. Subligar +1',
-        Feet = 'Koga Kyahan',
+        Feet = 'Fuma Sune-Ate',
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Green Ribbon +1',
@@ -121,7 +101,7 @@ local sets = {
         Back = 'Lamia Mantle',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Koga Kyahan',
+        Feet = 'Fuma Sune-Ate',
     },
     FireRes = {},
     IceRes = {},
@@ -305,50 +285,6 @@ local NinElemental = T{
     'Hyoton: San', 'Katon: San', 'Huton: San', 'Doton: San', 'Raiton: San', 'Suiton: San'
 }
 
-local ElementalStaffTable = {
-    ['Fire'] = fire_staff,
-    ['Earth'] = earth_staff,
-    ['Water'] = water_staff,
-    ['Wind'] = wind_staff,
-    ['Ice'] = ice_staff,
-    ['Thunder'] = thunder_staff,
-    ['Light'] = light_staff,
-    ['Dark'] = dark_staff
-}
-
-local NukeObiTable = {
-    ['Fire'] = 'Hachirin-no-obi',
-    ['Earth'] = 'Hachirin-no-obi',
-    ['Water'] = 'Hachirin-no-obi',
-    ['Wind'] = 'Hachirin-no-obi',
-    ['Ice'] = 'Hachirin-no-obi',
-    ['Thunder'] = 'Hachirin-no-obi',
-    ['Light'] = 'Hachirin-no-obi',
-    ['Dark'] = 'Hachirin-no-obi'
-}
-
-local NukeObiOwnedTable = {
-    ['Fire'] = karin_obi,
-    ['Earth'] = dorin_obi,
-    ['Water'] = suirin_obi,
-    ['Wind'] = furin_obi,
-    ['Ice'] = hyorin_obi,
-    ['Thunder'] = rairin_obi,
-    ['Light'] = korin_obi,
-    ['Dark'] = anrin_obi
-}
-
-local WeakElementTable = {
-    ['Fire'] = 'Water',
-    ['Earth'] = 'Wind',
-    ['Water'] = 'Thunder',
-    ['Wind'] = 'Ice',
-    ['Ice'] = 'Fire',
-    ['Thunder'] = 'Earth',
-    ['Light'] = 'Dark',
-    ['Dark'] = 'Light'
-}
-
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
@@ -388,6 +324,8 @@ end
 profile.OnLoad = function()
     gcinclude.SetAlias(T{'nuke'})
     gcdisplay.CreateCycle('Nuke', {[1] = 'Potency', [2] = 'Accuracy',})
+    gcinclude.SetAlias(T{'staff'})
+    gcdisplay.CreateCycle('Staff', {[1] = 'Katana', [2] = 'Staff',})
     gcmelee.Load()
     profile.SetMacroBook()
 end
@@ -401,6 +339,9 @@ profile.HandleCommand = function(args)
     if (args[1] == 'nuke') then
         gcdisplay.AdvanceCycle('Nuke')
         gcinclude.Message('Nuke', gcdisplay.GetCycle('Nuke'))
+    elseif (args[1] == 'staff') then
+        gcdisplay.AdvanceCycle('Staff')
+        gcinclude.Message('Staff', gcdisplay.GetCycle('Staff'))
     else
         gcmelee.DoCommands(args)
     end
@@ -472,7 +413,10 @@ profile.HandleMidcast = function()
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff)
-            EquipStaffAndObi(action)
+            if(gcdisplay.GetCycle('Staff') == 'staff') then
+                gcmelee.equipStaff(action)
+            end
+            gcmelee.equipStaffAndObi(action)
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental)
             if (gcdisplay.GetCycle('Nuke') == 'Accuracy') then
@@ -481,21 +425,27 @@ profile.HandleMidcast = function()
             if (action.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
-            EquipStaffAndObi(action)
+            if(gcdisplay.GetCycle('Staff') == 'staff') then
+                gcmelee.equipStaff(action)
+            end
+            gcmelee.equipStaffAndObi(action)
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
         end
-        local staff = ElementalStaffTable[action.Element]
-        if staff ~= '' then
-            gFunc.Equip('Main', staff)
-        end
+            if(gcdisplay.GetCycle('Staff') == 'staff') then
+                gcmelee.equipStaff(action)
+            end
+            gcmelee.equipStaffAndObi(action)
     elseif (action.Skill == 'Dark Magic') then
         if (DrkDarkMagic:contains(action.Name)) then
             gFunc.EquipSet(sets.DrkDarkMagic)
         end
-        EquipStaffAndObi(action)
+        if(gcdisplay.GetCycle('Staff') == 'Staff') then
+            gcmelee.equipStaff(action)
+        end
+        gcmelee.equipObi(action)
     elseif (action.Skill == 'Enhancing Magic') then
         gFunc.EquipSet(sets.Enhancing)
     elseif (action.Skill == 'Healing Magic') then
@@ -503,31 +453,5 @@ profile.HandleMidcast = function()
     end
 end
 
-function EquipStaffAndObi(action)
-    local staff = ElementalStaffTable[action.Element]
-    if staff ~= '' then
-        gFunc.Equip('Main', staff)
-    end
-
-    if (ObiCheck(action)) then
-        local obi = NukeObiTable[action.Element]
-        local obiOwned = NukeObiOwnedTable[action.Element]
-        if (obiOwned) then
-            gFunc.Equip('Waist', obi)
-        end
-    end
-end
-
-function ObiCheck(action)
-    local element = action.Element
-    local environment = gData.GetEnvironment()
-    local weakElement = WeakElementTable[element]
-
-    if environment.WeatherElement == element then
-        return environment.Weather:match('x2') or environment.DayElement ~= weakElement
-    end
-
-    return environment.DayElement == element and environment.WeatherElement ~= weakElement
-end
 
 return profile

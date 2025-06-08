@@ -10,6 +10,15 @@ Everything below can be ignored.
 gcinclude = gFunc.LoadFile('common\\gcinclude.lua')
 -- conquest = gFunc.LoadFile('common\\conquest.lua')
 
+local fire_staff = 'Vulcan\'s Staff'
+local earth_staff = 'Terra\'s Staff'
+local water_staff = 'Neptune\'s Staff'
+local wind_staff = 'Auster\'s Staff'
+local ice_staff = 'Aquilo\'s Staff'
+local thunder_staff = 'Jupiter\'s Staff'
+local light_staff = 'Apollo\'s Staff'
+local dark_staff = 'Pluto\'s Staff'
+
 local gcmelee = {}
 
 local isDPS = true
@@ -37,6 +46,51 @@ local utsuBuffs = T{
     [445] = 3,
     [446] = 4,
 }
+
+local NukeObiOwnedTable = {
+    ['Fire'] = karin_obi,
+    ['Earth'] = dorin_obi,
+    ['Water'] = suirin_obi,
+    ['Wind'] = furin_obi,
+    ['Ice'] = hyorin_obi,
+    ['Thunder'] = rairin_obi,
+    ['Light'] = korin_obi,
+    ['Dark'] = anrin_obi
+}
+
+local WeakElementTable = {
+    ['Fire'] = 'Water',
+    ['Earth'] = 'Wind',
+    ['Water'] = 'Thunder',
+    ['Wind'] = 'Ice',
+    ['Ice'] = 'Fire',
+    ['Thunder'] = 'Earth',
+    ['Light'] = 'Dark',
+    ['Dark'] = 'Light'
+}
+
+local NukeObiTable = {
+    ['Fire'] = 'Hachirin-no-obi',
+    ['Earth'] = 'Hachirin-no-obi',
+    ['Water'] = 'Hachirin-no-obi',
+    ['Wind'] = 'Hachirin-no-obi',
+    ['Ice'] = 'Hachirin-no-obi',
+    ['Thunder'] = 'Hachirin-no-obi',
+    ['Light'] = 'Hachirin-no-obi',
+    ['Dark'] = 'Hachirin-no-obi'
+}
+
+local ElementalStaffTable = {
+    ['Fire'] = fire_staff,
+    ['Earth'] = earth_staff,
+    ['Water'] = water_staff,
+    ['Wind'] = wind_staff,
+    ['Ice'] = ice_staff,
+    ['Thunder'] = thunder_staff,
+    ['Light'] = light_staff,
+    ['Dark'] = dark_staff
+}
+
 
 function gcmelee.SetIsDPS(isDPSVal)
     isDPS = isDPSVal
@@ -212,6 +266,23 @@ end
 
 function gcmelee.GetAccuracyMode()
     return TpVariantTable[tp_variant]
+end
+
+function gcmelee.equipStaff(action)
+    local staff = ElementalStaffTable[action.Element]
+    if staff ~= '' then
+        gFunc.Equip('Main', staff)
+    end
+end
+
+function gcmelee.equipObi(action)
+    if (gcmage.ObiCheck(action)) then
+        local obi = NukeObiTable[action.Element]
+        local obiOwned = NukeObiOwnedTable[action.Element]
+        if (obiOwned) then
+            gFunc.Equip('Waist', obi)
+        end
+    end
 end
 
 return gcmelee

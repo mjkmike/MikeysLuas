@@ -802,7 +802,7 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
         if (gcdisplay.GetToggle('MB') == true) then
             gFunc.EquipSet('MB')
         end
-        if (ObiCheck(action)) then
+        if (gcmage.ObiCheck(action)) then
             local obi = NukeObiTable[action.Element]
             local obiOwned = NukeObiOwnedTable[action.Element]
             if (obiOwned) then
@@ -818,7 +818,7 @@ function gcmage.EquipElemental(maxMP, blmNukeExtra)
     end
 end
 
-function ObiCheck(action)
+function gcmage.ObiCheck(action)
     local element = action.Element
     local environment = gData.GetEnvironment()
     local weakElement = WeakElementTable[element]
@@ -871,7 +871,7 @@ function gcmage.EquipEnfeeblingACC(action)
     --if ((player.MainJob ~= 'WHM') and conquest:GetOutsideControl()) and master_casters_bracelets then
     --    gFunc.Equip('Hands', 'Mst.Cst. Bracelets')
     --end
-    if (ObiCheck(action)) then
+    if (gcmage.ObiCheck(action)) then
         local obi = NukeObiTable[action.Element]
         local obiOwned = NukeObiOwnedTable[action.Element]
         if (obiOwned) then
@@ -912,7 +912,7 @@ function gcmage.EquipDark(maxMP)
         gFunc.Equip(diabolos_earring_slot, 'Diabolos\'s Earring')
     end
 
-    if (ObiCheck(action)) then
+    if (gcmage.ObiCheck(action)) then
         local obi = NukeObiTable[action.Element]
         local obiOwned = NukeObiOwnedTable[action.Element]
         if (obiOwned) then

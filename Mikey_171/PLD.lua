@@ -539,6 +539,7 @@ profile.HandleWeaponskill = function()
 
     local action = gData.GetAction()
     if (action.Name == 'Moonlight') then
+        gFunc.Equip('Neck', 'Fotia Gorget')
         return
     end
     if (action.Name == 'Spirits Within') then
