@@ -205,8 +205,6 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Cure);
     elseif (action.Skill == 'Elemental Magic') then
         gFunc.EquipSet(sets.Nuke);
-
-        end
     elseif (sactionell.Skill == 'Enfeebling Magic') then
         gFunc.EquipSet(sets.Enfeebling);
     elseif (action.Skill == 'Dark Magic') then
