@@ -72,6 +72,7 @@ Everything below can be ignored.
 gcmelee = gFunc.LoadFile('common\\gcmelee.lua')
 
 profile.HandleAbility = function()
+    local ability = gData.GetAction();
     gFunc.EquipSet(sets.EnmityDown)
     -- handle all rolls
     if (ability.Name:contains('Roll')) then
@@ -144,8 +145,6 @@ profile.HandleWeaponskill = function()
 end
 
 profile.OnLoad = function()
-    gcinclude.SetAlias(T{'msg'})
-    gcdisplay.CreateCycle('Msg', {[1] = 'On', [2] = 'Off',})
     gcinclude.SetAlias(T{'ranged'})
     gcdisplay.CreateCycle('Ranged', {[1] = 'Accuracy', [2] = 'Attack',})
     gcinclude.SetAlias(T{'staffswap'})
@@ -163,9 +162,6 @@ profile.HandleCommand = function(args)
     if (args[1] == 'ranged') then
         gcdisplay.AdvanceCycle('Ranged')
         gcinclude.Message('Ranged', gcdisplay.GetCycle('Ranged'))
-    elseif(args[1] == 'msg') then
-        gcdisplay.AdvanceCycle('Msg')
-        gcinclude.Message('Msg', gcdisplay.GetCycle('Msg'))
      elseif(args[1] == 'staffswap') then
         gcdisplay.AdvanceCycle('StaffSwap')
         gcinclude.Message('StaffSwap', gcdisplay.GetCycle('StaffSwap'))

@@ -416,7 +416,7 @@ profile.HandleMidcast = function()
             if(gcdisplay.GetCycle('Staff') == 'staff') then
                 gcmelee.equipStaff(action)
             end
-            gcmelee.equipStaffAndObi(action)
+            gcmelee.equipObi(action)
         elseif (NinElemental:contains(action.Name)) then
             gFunc.EquipSet(sets.NinElemental)
             if (gcdisplay.GetCycle('Nuke') == 'Accuracy') then
@@ -428,7 +428,7 @@ profile.HandleMidcast = function()
             if(gcdisplay.GetCycle('Staff') == 'staff') then
                 gcmelee.equipStaff(action)
             end
-            gcmelee.equipStaffAndObi(action)
+            gcmelee.equipObi(action)
         end
     elseif (action.Skill == 'Enfeebling Magic') then
         if (DrkDebuffs:contains(action.Name)) then
@@ -437,7 +437,7 @@ profile.HandleMidcast = function()
             if(gcdisplay.GetCycle('Staff') == 'staff') then
                 gcmelee.equipStaff(action)
             end
-            gcmelee.equipStaffAndObi(action)
+            gcmelee.equipObi(action)
     elseif (action.Skill == 'Dark Magic') then
         if (DrkDarkMagic:contains(action.Name)) then
             gFunc.EquipSet(sets.DrkDarkMagic)

@@ -8,6 +8,7 @@ Everything below can be ignored.
 ]]
 
 gcinclude = gFunc.LoadFile('common\\gcinclude.lua')
+gcmage = gFunc.LoadFile('common\\gcmage.lua')
 -- conquest = gFunc.LoadFile('common\\conquest.lua')
 
 local fire_staff = 'Vulcan\'s Staff'
