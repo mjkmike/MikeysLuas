@@ -78,14 +78,14 @@ profile.HandleAbility = function()
     if (ability.Name:contains('Roll')) then
         gFunc.EquipSet(sets.Dt);
         gFunc.EquipSet(sets.Rolls);
-        if(action.Name == 'Phantom Roll') then
+        if(ability.Name == 'Phantom Roll') then
             gFunc.EquipSet(sets.PhantomRoll)
         end
 
         if gcinclude.CORmsg == false then return end
 
-        for n = 1, #gcinclude.Rolls do
-            if gcinclude.Rolls[n][1] == ability.Name then
+        for n = 1, #rolls do
+            if rolls[n][1] == ability.Name then
                 print(chat.header('GCinclude'):append('[' .. chat.warning(ability.Name) .. ']' .. '  [Lucky: ' .. chat.success(rolls[n][2]) .. ']  [Unlucky: ' .. chat.error(rolls[n][3]) .. ']'));
             end
         end
@@ -100,9 +100,9 @@ profile.HandleAbility = function()
         end
 
         if(gcdisplay.GetCycle('StaffSwap') == 'On') then
-            gcmelee.equipStaff(action)
+            gcmelee.equipStaff(ability)
         end
-        gcmelee.equipObi(action)
+        gcmelee.equipObi(ability)
     end
 end
 
