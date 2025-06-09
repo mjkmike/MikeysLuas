@@ -65,14 +65,15 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Ninja Kyahan',
+        Feet = 'Dusk Ledelsens +1',
     },
     Movement = {
         Hands = 'Dst. Mittens +1',
         Feet = 'Ninja Kyahan',
     },
     Movement_MDT = {
-
+        Hands = 'Dst. Mittens +1',
+        Feet = 'Ninja Kyahan',
     },
 
     DT = {
@@ -87,7 +88,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Dst. Subligar +1',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Dusk Ledelsens +1',
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Green Ribbon +1',
@@ -101,7 +102,7 @@ local sets = {
         Back = 'Lamia Mantle',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Dusk Ledelsens +1',
     },
     FireRes = {},
     IceRes = {},
@@ -133,7 +134,7 @@ local sets = {
     	Head = 'Walahra Turban',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
 		Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
-		Feet = 'Fuma Sune-Ate',
+		Feet = 'Dusk Ledelsens +1',
         Legs = 'Byakko\'s Haidate',
     },
 
@@ -193,7 +194,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Dusk Ledelsens +1',
     },
     TP_MidAcc = {		
 		Head = 'Walahra Turban',
@@ -207,7 +208,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Dusk Ledelsens +1',
     },
     TP_HighAcc = {		
         Head = 'Optical hat',
@@ -221,7 +222,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = 'Life Belt',
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Fuma Sune-Ate',
+        Feet = 'Dusk Ledelsens +1',
     },
     TP_Mjollnir_Haste = {},
 

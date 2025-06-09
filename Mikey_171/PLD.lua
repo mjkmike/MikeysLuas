@@ -71,7 +71,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = 'Warwolf Belt',
         Legs = 'Homam Cosciales',
-        Feet = 'Glt. Leggings +1',
+        Feet = 'Dusk Ledelsens +1',
     },
     Movement = {
         Hands = 'Kaiser handschuhs',
@@ -269,7 +269,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
         Legs = 'Homam Cosciales', -- 3
-        Feet = 'Dusk Ledelsens', -- 2
+        Feet = 'Dusk Ledelsens +1', -- 3
         ammo = 'Iron Arrow',
     },
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
@@ -303,7 +303,7 @@ local sets = {
         Back = { Name = 'Resentment Cape', Priority = 100 },
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'Valor Breeches', Priority = -100 },
-        Feet = 'Dusk Ledelsens', 
+        Feet = 'Dusk Ledelsens +1',
         ammo = 'Iron Arrow',
     },
     Cheat_C3HPDown = { -- 1194
@@ -383,7 +383,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens +1',
 		Ammo = 'Iron Arrow',
     },
     TP_MidAcc = {
@@ -398,7 +398,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
-        Feet = 'Dusk Ledelsens',
+        Feet = 'Dusk Ledelsens +1',
 		Ammo = 'Iron Arrow',
     },
     TP_HighAcc = {
@@ -413,7 +413,7 @@ local sets = {
         Back = 'Amemet Mantle +1',
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
-		Feet = 'Dusk Ledelsens',
+		Feet = 'Dusk Ledelsens +1',
 		ammo = 'Iron Arrow',	
     },
     TP_Mjollnir_Haste = {},
