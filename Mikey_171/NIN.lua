@@ -54,7 +54,7 @@ local sets = {
     IdleALTDT = {},
     Resting = {},
     Town = {		
-        Head = 'Walahra Turban',
+        Head = 'Arh. Jinpachi +1',
         Neck = 'Peacock charm',
         Ear1 = 'Tmph. Earring +1',
         Ear2 = 'Hades Earring +1',
@@ -139,10 +139,17 @@ local sets = {
     },
 
     Hate = {
-        Ear1 = 'Hades Earring +1',
+        Head = 'Arh. Jinpachi +1',
+        Neck = 'Harmonia\'s Torque',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Arhat\'s Gi +1',
+        -- hands = 'Yasha',
 		Ring1 = 'Mermaid Ring',
-		Back = 'Resentment Cape',
-        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
+        Ring2 = 'Sattva Ring',
+		Back = 'Cerb. Mantle +1',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
+        Legs = 'Yasha Hakama',
+        -- Feet = 'Yasha',
     },
     NinDebuff = {        
         Head = 'Ninja Hatsuburi',
@@ -159,7 +166,7 @@ local sets = {
         Feet = 'Koga Kyahan',
     },
     NinElemental = {
-        Head = 'Ninja Hatsuburi',
+        Head = 'Koga Hatsuburi',
 		Neck = 'Justice Badge',
         Ear1 = 'Morion Earring +1',
         Ear2 = 'Moldavite Earring',
@@ -235,7 +242,7 @@ local sets = {
         Hands = 'Ochiudo\'s Kote',
         Ring1 = 'Harmonius Ring',
 		Ring2 = 'Rajas Ring',
-        Back = 'Cerberus Mantle',
+        Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
