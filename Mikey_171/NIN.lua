@@ -262,10 +262,6 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
     },
-    eepy = {
-		Neck = 'Berserker\'s Torque'
-	},
-
     WS_BladeJin = {},
     WS_BladeKu = {},
 

@@ -8,7 +8,9 @@ local hercules_ring = true
 local hercules_ring_slot = 'Ring1'
 
 local guardian_earring = true;
-local guardian_earring = 'Ear2'
+local guardian_earring_slot = 'Ear2'
+local guardian_ring = true
+local guardian_ring_slot = 'Ring1'
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
@@ -48,7 +50,7 @@ local sets = {
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 },
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
         Ammo = 'Iron Arrow',
@@ -69,7 +71,7 @@ local sets = {
         Ring1 = 'Defending Ring',
 		Ring2 = 'Harmonius Ring',
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
     },
@@ -94,7 +96,7 @@ local sets = {
         Ring1 = 'Jelly Ring', -- 5
         Ring2 = { Name = 'Defending Ring', Priority = 100 }, -- 10
         Back = 'Shadow Mantle',
-        Waist = 'Warwolf Belt',
+        Waist = 'Marid Belt',
         Legs = { Name = 'Koenig Diechlings', Priority = 10 },
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
@@ -331,7 +333,7 @@ local sets = {
 		Ring1 = 'Bomb Queen ring',
 		Ring2 = 'Sattva Ring',	
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
-		Back = 'Cerberus Mantle',
+		Back = 'Cerb. Mantle +1',
         Legs = 'Valor Breeches',
         Feet = 'Valor Leggings',
 		ammo = 'Iron Arrow',
@@ -380,7 +382,7 @@ local sets = {
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Harmonius Ring',
         Ring2 = 'Rajas Ring',
-        Back = 'Amemet Mantle +1',
+        Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
@@ -395,7 +397,7 @@ local sets = {
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Rajas Ring',
-        Back = 'Amemet Mantle +1',
+        Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
@@ -410,7 +412,7 @@ local sets = {
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
         Ring1 = 'Toreador\'s Ring',
 		Ring2 = 'Rajas Ring',
-        Back = 'Amemet Mantle +1',
+        Back = 'Cerb. Mantle +1',
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
 		Feet = 'Dusk Ledelsens +1',
@@ -427,7 +429,7 @@ local sets = {
         Hands = 'Battle Gloves',
         Ring1 = 'Harmonius Ring',
 		Ring2 = 'Rajas Ring',
-        Back = 'Cerberus Mantle',
+        Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Ryl.kgt. breeches',
         Feet = 'Rutter Sabatons',
@@ -515,6 +517,9 @@ profile.HandleAbility = function()
         end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
+        if (guardian_ring and player.HPP <= 75 and player.TP <= 1000) then
+            gFunc.Equip(guardian_ring_slot, 'Guardian\'s Ring')
+        end
     elseif (action.Name == 'Sentinel' and valor_leggings ~= '') then
         gFunc.Equip('Legs', valor_leggings)
     elseif (action.Name == 'Cover') then
@@ -592,7 +597,7 @@ profile.HandleDefault = function()
         gFunc.Equip('Ear2', 'Tmph. Earring +1')
     end
 
-    if (parade_gorget and player.HPP >= 85 and gcdisplay.IdleSet == 'Normal') then
+    if (parade_gorget and player.HPP >= 85 and (gcdisplay.IdleSet == 'Normal' or (gcdisplay.IdleSet == 'LowAcc' and player.MPP <= 90))) then
         gFunc.Equip('Neck', 'Parade Gorget')
     end
 
@@ -682,7 +687,7 @@ profile.HandleMidcast = function()
     end
 
     if (guardian_earring and player.HPP <= 25 and player.TP <= 1000) then
-        gFunc.Equip(guardian_sarring_slot, 'Guardian Earring')
+        gFunc.Equip(guardian_earring_slot, 'Guardian Earring')
     end
 end
 
