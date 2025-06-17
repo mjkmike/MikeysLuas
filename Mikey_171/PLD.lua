@@ -36,7 +36,7 @@ local sets = {
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = 'Glt. Leggings +1',
-		Ammo = 'Iron Arrow',
+		Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     IdleALT = {
     },
@@ -53,7 +53,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'koenig Diechlings', Priority = 10 },
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
-        Ammo = 'Iron Arrow',
+        Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     IdleALTDT = {
     },
@@ -257,7 +257,7 @@ local sets = {
         Waist = 'Silver Obi +1', -- 8
         Legs = { Name = 'Valor Breeches', Priority = 20 }, -- 10
         Feet = 'Mountain Gaiters', -- 5
-        ammo = 'Iron Arrow',
+        Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     Haste = {
         Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
@@ -272,7 +272,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
         Legs = 'Homam Cosciales', -- 3
         Feet = 'Dusk Ledelsens +1', -- 3
-        ammo = 'Iron Arrow',
+        Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     Haste_Ichi = { -- Optional, provided here only if you wish to mix in SIRD or other stats over max haste
     },
@@ -290,7 +290,7 @@ local sets = {
         Waist = 'Warwolf Belt',
         Legs = { Name = 'Valor Breeches', Priority = -100 },
         Feet = 'Valor Leggings',
-        ammo = 'Iron Arrow',
+        Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
 
     },
     Hate_Flash = { -- Optional, provided here only if you wish to mix in haste or other stats over max +enmity
@@ -306,7 +306,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'Valor Breeches', Priority = -100 },
         Feet = 'Dusk Ledelsens +1',
-        ammo = 'Iron Arrow',
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     Cheat_C3HPDown = { -- 1194
         Head = 'Gallant Coronet',
@@ -336,7 +336,7 @@ local sets = {
 		Back = 'Cerb. Mantle +1',
         Legs = 'Valor Breeches',
         Feet = 'Valor Leggings',
-		ammo = 'Iron Arrow',
+		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     Cheat_C4HPDown = { -- 1142
         Head = 'Wivre Hairpin',
@@ -351,7 +351,7 @@ local sets = {
         Waist = 'Astral Rope',
         Legs = 'Dst. Subligar +1',
         Feet = 'Mountain Gaiters',
-        ammo = 'Iron Arrow',
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
     Cheat_C4HPUp = { -- 1654
         Head = 'Aegishjalmr',
@@ -366,7 +366,7 @@ local sets = {
         Waist = 'Jungle Sash',
         Legs = 'Koenig Diechlings',
         Feet = 'Valor Leggings',
-        ammo = 'Iron Arrow',
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
 
     LockSet1 = {},
@@ -386,7 +386,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
-		Ammo = 'Iron Arrow',
+		Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },
     },
     TP_MidAcc = {
         Head = 'Walahra Turban',
@@ -401,7 +401,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
-		Ammo = 'Iron Arrow',
+		Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },
     },
     TP_HighAcc = {
         Head = 'Optical Hat',
@@ -412,11 +412,11 @@ local sets = {
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
         Ring1 = 'Toreador\'s Ring',
 		Ring2 = 'Rajas Ring',
-        Back = 'Cerb. Mantle +1',
+        Back = 'Settler\'s Cape',
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
 		Feet = 'Dusk Ledelsens +1',
-		ammo = 'Iron Arrow',	
+		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
     },
     TP_Mjollnir_Haste = {},
 
@@ -433,6 +433,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Ryl.kgt. breeches',
         Feet = 'Rutter Sabatons',
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
     },
     WS_MidAcc = {},
     WS_HighAcc = {},
@@ -517,6 +518,7 @@ profile.HandleAbility = function()
         end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
+        local player = gData.GetPlayer()
         if (guardian_ring and player.HPP <= 75 and player.TP <= 1000) then
             gFunc.Equip(guardian_ring_slot, 'Guardian\'s Ring')
         end
