@@ -122,7 +122,7 @@ local sets = {
         Back = 'Shadow Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
-        Feet = 'Dance shoes',
+        Feet = 'Dusk Ledelsens +1',
     },
 
     Precast = {
