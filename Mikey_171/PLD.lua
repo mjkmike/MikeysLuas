@@ -341,7 +341,7 @@ local sets = {
         Feet = 'Valor Leggings',
 		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
-    Cheat_C4HPDown = { -- 1142
+    Cheat_C4HPDown = { -- 1095
         Head = 'Wivre Hairpin',
         Neck = 'Parade Gorget',
         Ear1 = 'Astral Earring',
@@ -350,15 +350,15 @@ local sets = {
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Ether Ring',
         Ring2 = 'Serket Ring',
-        Back = 'Shadow Mantle',
+        Back = 'Settler\'s Cape',
         Waist = 'Astral Rope',
         Legs = 'Dst. Subligar +1',
-        Feet = 'Mountain Gaiters',
+        Feet = 'Glt. Leggings +1',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
-    Cheat_C4HPUp = { -- 1654
+    Cheat_C4HPUp = { -- 1609
         Head = 'Aegishjalmr',
-        Neck = 'Ajase Beads',
+        Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
         Ear2 = 'Cassie Earring',
         Body = 'koenig Cuirass',
@@ -367,7 +367,7 @@ local sets = {
         Ring2 = 'Bloodbead Ring',
         Back = 'Cerb. Mantle +1',
         Waist = 'Jungle Sash',
-        Legs = 'Koenig Diechlings',
+        Legs = 'Valor Breeches',
         Feet = 'Valor Leggings',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
