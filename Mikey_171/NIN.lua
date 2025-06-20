@@ -79,8 +79,8 @@ local sets = {
     DT = {
         Head = 'Arh. Jinpachi +1',
         Neck = 'Peacock Charm',
-        Ear1 = 'Pigeon Earring',
-        Ear2 = 'Bloodbead Earring',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Suppanomimi',
         Body = 'Arhat\'s Gi +1',
         Hands = 'Dst. Mittens +1',
         Ring1 = 'Jelly Ring',
@@ -119,16 +119,37 @@ local sets = {
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
 		Ring1 = 'Harmonius Ring',
 		Ring2 = 'Rajas Ring',
-        Back = 'Shadow Mantle',
+        Back = 'Boxer\'s Mantle',
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens +1',
+    },
+    EvasionDT = {
+        Head = 'Optical Hat',
+        Neck = 'Evasion Torque',
+		Ear1 = 'Triton Earring',
+        Ear2 = 'Suppanomimi',
+        Body = 'Scp. Harness +1',
+        Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
+		Ring1 = 'Harmonius Ring',
+		Ring2 = 'Rajas Ring',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Dance Shoes',
     },
 
     Precast = {
         Ear1 = 'Loquac. Earring',
     },
     SIRD = {
+        Head = 'Optical Hat',
+        Neck = 'Evasion Torque',
+        Body = 'Yasha Samue',
+        Hands = 'Yasha Tekko',
+        Back = 'Shadow Mantle',
+        Legs = 'Yasha Hakama',
+        Feet = 'Yasha sune-ate',
     },
     Haste = { -- Used for Utsusemi cooldown
     	Head = 'Walahra Turban',
@@ -141,15 +162,16 @@ local sets = {
     Hate = {
         Head = 'Arh. Jinpachi +1',
         Neck = 'Harmonia\'s Torque',
+        Ear1 = 'eris\' Earring +1',
         Ear2 = 'Hades Earring +1',
         Body = 'Arhat\'s Gi +1',
-        -- hands = 'Yasha',
+        hands = 'Yasha Tekko',
 		Ring1 = 'Mermaid Ring',
         Ring2 = 'Sattva Ring',
 		Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Yasha Hakama',
-        -- Feet = 'Yasha',
+        Feet = 'Yasha sune-ate',
     },
     NinDebuff = {        
         Head = 'Ninja Hatsuburi',
@@ -385,6 +407,10 @@ profile.HandleDefault = function()
         if (dusk_to_dawn_eva_pants ~= '' and (environment.Time < 7 or environment.Time >= 17)) then
             gFunc.Equip('Legs', dusk_to_dawn_eva_pants)
         end
+
+        if (gData.GetBuffCount(66) == 0 and  gData.GetBuffCount(444) == 0 and  gData.GetBuffCount(445) == 0 and gData.GetBuffCount(446) == 0 and player.IsMoving == false) then
+            gFunc.EquipSet(sets.EvasionDT)
+		end
     end
 
     gFunc.EquipSet(gcinclude.BuildLockableSet(gData.GetEquipment()))

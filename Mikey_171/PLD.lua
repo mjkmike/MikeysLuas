@@ -426,7 +426,7 @@ local sets = {
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
         Body = 'Haubergeon +1',
-        Hands = 'Battle Gloves',
+        Hands = 'Alkyoneus\'s Brc.',
         Ring1 = 'Harmonius Ring',
 		Ring2 = 'Rajas Ring',
         Back = 'Cerb. Mantle +1',
@@ -554,13 +554,14 @@ profile.HandleMidshot = function()
 end
 
 profile.HandleWeaponskill = function()
-    gcmelee.DoWS()
-
     local action = gData.GetAction()
     if (action.Name == 'Moonlight') then
         gFunc.Equip('Neck', 'Fotia Gorget')
         return
     end
+    gcmelee.DoWS()
+
+
     if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
     end
