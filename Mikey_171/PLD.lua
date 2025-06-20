@@ -7,6 +7,9 @@ local parade_gorget = true
 local hercules_ring = true
 local hercules_ring_slot = 'Ring1'
 
+local mercenarys_earring = true
+local mercenarys_earring_slot = 'Ear2'
+
 local guardian_earring = true;
 local guardian_earring_slot = 'Ear2'
 local guardian_ring = true
@@ -527,6 +530,10 @@ profile.HandleAbility = function()
         local environment = gData.GetEnvironment()
         if (shadow_mantle and environment.DayElement == 'Dark') then
             gFunc.Equip('Back', 'Shadow Mantle')
+        end
+        local player = gData.GetPlayer()
+        if(player.SubJob == "WAR" and mercenarys_earring) then
+            gFunc.Equip(mercenarys_earring_slot, 'Mercen. Earring')
         end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
