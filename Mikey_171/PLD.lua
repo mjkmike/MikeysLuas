@@ -29,7 +29,7 @@ local sets = {
     Idle = {
         Head = 'displaced',
         Body = 'Royal Cloak',
-        Neck = 'Shield Torque',
+        Neck = 'Jeweled Collar',
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
         Hands = 'Kaiser handschuhs',
@@ -105,7 +105,7 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Koenig Schaller',
-        Neck = 'Shield Torque',
+        Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
         Body = 'Koenig Cuirass',
@@ -442,6 +442,21 @@ local sets = {
     WS_HighAcc = {},
 
     WS_Spirits = {},
+    WS_KOR = {
+        Head = 'Valor Coronet',		
+        Neck = 'Shield Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Tmph. Earring +1',
+        Body = 'Koenig Cuirass',
+        Hands = 'Kaiser handschuhs',
+        Ring1 = 'Sattva Ring',
+		Ring2 = { Name = 'Soil Ring', Augment = { [1] = 'VIT+5'} },
+        Back = 'Beak mantle +1',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
+        Legs = 'Koenig Diechlings',
+        Feet = 'Koenig Schuhs',
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
+    },
 
     Cover = {
         Head = 'Gallant Coronet',
@@ -472,7 +487,7 @@ local sets = {
         Hands = 'Kaiser handschuhs',
         Ring1 = 'Sattva Ring',
 		Ring2 = { Name = 'Soil Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Cerb. Mantle +1',
+        Back = 'Beak mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Koenig Diechlings',
         Feet = 'Koenig Schuhs',
@@ -571,6 +586,11 @@ profile.HandleWeaponskill = function()
 
     if (action.Name == 'Spirits Within') then
         gFunc.EquipSet(sets.WS_Spirits)
+    elseif (action.Name == 'Knights of Round') then
+        gFunc.EquipSet(sets.WS_KOR)
+        if(player.SubJob == "WAR" and mercenarys_earring) then
+            gFunc.Equip(mercenarys_earring_slot, 'Mercen. Earring')
+        end
     end
 end
 

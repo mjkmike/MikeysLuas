@@ -337,6 +337,7 @@ function gcinclude.DoDefaultOverride(isMelee)
             or gcdisplay.IdleSet == 'DT'
             or gcdisplay.IdleSet == 'Fight'
             or gcdisplay.IdleSet == 'LowAcc'
+            or gcdisplay.IdleSet == 'MidAcc'
             or gcdisplay.IdleSet == 'HighAcc'
             or gcdisplay.IdleSet == 'Evasion'
         )
