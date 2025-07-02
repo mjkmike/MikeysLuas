@@ -63,7 +63,7 @@ local sets = {
     Resting = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
-        Wasit = 'Hierarch Belt'
+        Waist = 'Hierarch Belt'
     },
     Town = {
         Head = 'Koenig Schaller',
