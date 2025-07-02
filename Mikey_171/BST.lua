@@ -3,16 +3,48 @@ local profile = {}
 local fastCastValue = 0.00 -- 0% from gear
 
 local gaudy_harness = true
+local suppanomimi = true
+local suppanomimi_slot = 'Ear2'
 
 -- Replace these with '' if you do not have them
 local muscle_belt = ''
 
 local sets = {
-    Idle = {},
+    Idle = {
+        Head = 'Genbu\'s Kabuto',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Pigeon Earring',
+        Ear2 = 'Bloodbead Earring',
+        Body = 'Haubergeon +1',
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Defending Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Suzaku\'s sun-ate',
+    },
     IdleALT = {},
     Resting = {},
-    Town = {},
-    Movement = {},
+    Town = {
+        Head = 'Shaded Specs.',
+        Neck = 'Peacock charm',
+        Ear1 = 'Tmph. Earring +1',
+        Ear2 = 'Hades Earring +1',
+        Body = 'Haubergeon +1',
+        Hands = 'Dusk Gloves +1',
+		Ring1 = 'Defending Ring',
+		Ring2 = 'Harmonius Ring',
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Dusk Ledelsens +1',
+    },
+    Movement = {
+        Hands = 'Dst. Mittens +1',
+        Legs = 'Dst. Subligar +1',
+        Feet = 'Suzaku\'s sun-ate',
+    },
 
     DT = {},
     MDT = { -- Shell IV provides 23% MDT
@@ -29,15 +61,37 @@ local sets = {
     SIRD = {
     },
     Haste = { -- Used for Utsusemi cooldown
+        Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
+        Ear1 = 'Loquac. Earring', -- FC
+        -- Ear2 = 'Magnetic Earring',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Defending Ring', Priority = 100 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
+        Feet = 'Dusk Ledelsens +1', -- 3
     },
 
     LockSet1 = {},
     LockSet2 = {},
     LockSet3 = {},
 
-    TP_LowAcc = {},
+    TP_LowAcc = {
+        Head = 'Walahra Turban',
+        Neck = 'Chivalrous Chain',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Tmph. Earring +1',
+        Body = 'Haubergeon +1',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Harmonius Ring',
+        Ring2 = 'Rajas Ring',
+        Back = 'Cerb. Mantle +1',
+        Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
+        Legs = 'Ryl.Kgt. Breeches',
+        Feet = 'Dusk Ledelsens +1',
+    },
+    TP_MidAcc = {},
     TP_HighAcc = {},
-    TP_NIN = {},
     TP_Mjollnir_Haste = {},
 
     WS = {},
@@ -52,8 +106,8 @@ local sets = {
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 5')
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2')
+    -- AshitaCore:GetChatManager():QueueCommand(1, '/macro book 5')
+    -- AshitaCore:GetChatManager():QueueCommand(1, '/macro set 2')
 end
 
 --[[
@@ -212,8 +266,8 @@ profile.HandleDefault = function()
     if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
     end
-    if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
-        gFunc.EquipSet('TP_NIN')
+    if (player.SubJob == 'NIN' and player.Status == 'Engaged' && suppanomimi) then
+        gFunc.Equip(suppanomimi_slot, 'Suppanomimi')
     end
 
     gcmelee.DoDefaultOverride()

@@ -63,6 +63,7 @@ local sets = {
     Resting = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
+        Wasit = 'Hierarch Belt'
     },
     Town = {
         Head = 'Koenig Schaller',
@@ -264,14 +265,29 @@ local sets = {
     },
     Haste = {
         Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
-        Neck = 'Willpower Torque',
+        -- Neck = 'Willpower Torque',
         Ear1 = 'Loquac. Earring', -- FC
         -- Ear2 = 'Magnetic Earring',
         Body = 'Koenig Cuirass',
         Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
-        Ring1 = 'Shadow Ring',
+        Ring1 = 'Blitz Ring',
         Ring2 = { Name = 'Defending Ring', Priority = 100 },
         Back = 'Shadow Mantle',
+        Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
+        Legs = 'Homam Cosciales', -- 3
+        Feet = 'Dusk Ledelsens +1', -- 3
+        Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
+    },
+    Haste_Flash = {
+        Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
+        Neck = 'Harmonia\'s Torque',
+        Ear1 = 'Loquac. Earring', -- FC
+        Ear2 = 'Hades Earring +1',
+        Body = 'Valor Surcoat',
+        Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
+        Ring1 = 'Blitz Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Back = { Name = 'Cerb. Mantle +1', Priority = 100 },
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} }, -- 6
         Legs = 'Homam Cosciales', -- 3
         Feet = 'Dusk Ledelsens +1', -- 3
@@ -307,7 +323,7 @@ local sets = {
         Ring2 = { Name = 'Sattva Ring', Priority = 100 },
         Back = { Name = 'Cerb. Mantle +1', Priority = 100 },
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'VIT+5'} },
-        Legs = { Name = 'Valor Breeches', Priority = -100 },
+        Legs = { Name = 'Homam Cosciales', Priority = -100 },
         Feet = 'Dusk Ledelsens +1',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
@@ -424,7 +440,7 @@ local sets = {
     TP_Mjollnir_Haste = {},
 
     WS = {
-		Head = 'Voyager Sallet',
+		Head = 'Hecatomb Cap',
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
@@ -434,7 +450,7 @@ local sets = {
 		Ring2 = 'Rajas Ring',
         Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
-        Legs = 'Ryl.kgt. breeches',
+        Legs = 'Valor breeches',
         Feet = 'Rutter Sabatons',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
     },
@@ -443,7 +459,7 @@ local sets = {
 
     WS_Spirits = {},
     WS_KOR = {
-        Head = 'Koenig Schaller',		
+        Head = 'Hecatomb Cap',		
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
@@ -453,7 +469,7 @@ local sets = {
 		Ring2 = { Name = 'Soil Ring', Augment = { [1] = 'VIT+5'} },
         Back = 'Knightly mantle',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
-        Legs = 'Koenig Diechlings',
+        Legs = 'Valor breeches',
         Feet = 'Koenig Schuhs',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
     },
@@ -588,6 +604,7 @@ profile.HandleWeaponskill = function()
         gFunc.EquipSet(sets.WS_Spirits)
     elseif (action.Name == 'Knights of Round') then
         gFunc.EquipSet(sets.WS_KOR)
+        local player = gData.GetPlayer()
         if(player.SubJob == "WAR" and mercenarys_earring) then
             gFunc.Equip(mercenarys_earring_slot, 'Mercen. Earring')
         end
@@ -701,13 +718,14 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.Cure)
     elseif (action.Skill == 'Divine Magic') then
         if (action.Name == 'Flash') then
-            --local sentinel = gData.GetBuffCount('Sentinel')
-            --if (sentinel >= 1) then
-            --    gFunc.EquipSet(sets.Haste)
-            --else
+            local sentinel = gData.GetBuffCount('Sentinel')
+            if (sentinel >= 1) then
+                gFunc.EquipSet(sets.Haste)
+                gFunc.EquipSet(sets.Haste_Flash)
+            else
                 gFunc.EquipSet(sets.Hate)
                 gFunc.EquipSet(sets.Hate_Flash)
-            --end
+            end
         else
             gFunc.EquipSet(sets.Divine)
         end
