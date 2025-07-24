@@ -43,7 +43,7 @@ local sets = {
     Movement = {
         Hands = 'Dst. Mittens +1',
         Legs = 'Dst. Subligar +1',
-        Feet = 'Suzaku\'s sun-ate',
+        Feet = 'Suzaku\'s sune-ate',
     },
 
     DT = {},
@@ -266,7 +266,7 @@ profile.HandleDefault = function()
     if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
         gFunc.Equip('Waist', muscle_belt)
     end
-    if (player.SubJob == 'NIN' and player.Status == 'Engaged' && suppanomimi) then
+    if (player.SubJob == 'NIN' and player.Status == 'Engaged' and suppanomimi) then
         gFunc.Equip(suppanomimi_slot, 'Suppanomimi')
     end
 

@@ -14,6 +14,7 @@ local guardian_earring = true;
 local guardian_earring_slot = 'Ear2'
 local guardian_ring = true
 local guardian_ring_slot = 'Ring1'
+local hp_in_cure = 1377
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
@@ -70,7 +71,7 @@ local sets = {
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Tmph. Earring +1',
         Ear2 = 'Hades Earring +1',
-        Body = 'Haubergeon +1',
+        Body = 'Assault Brstplate',
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Defending Ring',
 		Ring2 = 'Harmonius Ring',
@@ -113,7 +114,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Lamia Mantle',
+        Back = 'Lamie Mantle +1',
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Coral cuisses +1',
         Feet = 'Coral Greaves +1',
@@ -127,38 +128,38 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Bomb Queen ring',
         Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Lamia Mantle',
+        Back = 'Lamie Mantle +1',
         Waist = 'Jungle Sash',
         Legs = 'Coral cuisses +1',
         Feet = 'Coral Greaves +1',
     },
-    FireRes = { -- 137
+    FireRes = { -- 129
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Tmph. Earring +1', -- 12
         Ear2 = 'Crimson Earring', -- 10
-        Body = 'Republic Harness', -- 6
-        --Hands = 'Tarasque Mitts +1', -- 6
-        Ring1 = 'Defending Ring', -- 10
+        Body = 'Assault Brstplate', -- 15
+        --Hands = 'Tarasque Mitts +1', 
+        Ring1 = 'Shadow Ring',
         Ring2 = 'Harmonius Ring', -- 10
-        Back = 'Dino Mantle', -- 4
+        Back = 'Cerb. Mantle +1', -- 15
         Waist = 'Water Belt', -- 20
         Legs = 'Crimson Cuisses', -- 20
         Feet = 'Power Sandals', -- 7
     },
-    IceRes = { -- 135
+    IceRes = { -- 107
         Head = 'Green Ribbon +1', -- 10
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Tmph. Earring +1', -- 12
         Ear2 = 'Crimson Earring', -- 10
-        Body = 'Koenig Cuirass',
+        Body = 'Assault Brstplate', --15
         Hands = 'Kng. handschuhs',
         Ring1 = 'Diamond Ring', -- 9
-        Ring2 = 'Defending Ring', 
-        -- Back = 'Ram Mantle +1', -- 6
-        -- Waist = 'Fire Belt', -- 20
+        Ring2 = 'Shadow Ring', 
+        Back = 'Shadow Mantle', -- 6
+        Waist = 'Fire Belt', -- 20
         -- Legs = 'Feral Trousers', -- 6
-        Feet = 'Crimson Greaves', -- 20
+        Feet = 'Blood Greaves', -- 21
     },
     LightningRes = { -- 138
         Range = 'Lightning Bow +1', -- 7
@@ -177,10 +178,8 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     EarthRes = { -- 143
-        Range = 'Rosenbogen',
-        Ammo = '',
-        Head = 'Black Ribbon', -- 12
-        Neck = 'Jeweled Collar +1', -- 10
+        Head = 'Green Ribbon +1', -- 10
+        Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Robust Earring', -- 11
         Ear2 = 'Robust Earring', -- 11
         Body = 'Assault Brstplate', -- 15
@@ -249,7 +248,8 @@ local sets = {
     },
     SIRD = {
         Head = { Name = 'Koenig Schaller', Priority = 30 },
-        Neck = 'Willpower Torque', -- 5
+        -- Neck = 'Willpower Torque', -- 5
+        Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
         Body = 'Koenig Cuirass',
         Hands = 'Heavy Gauntlets',
@@ -265,7 +265,7 @@ local sets = {
         Head = { Name = 'Walahra turban', Priority = 100 }, -- 5
         -- Neck = 'Willpower Torque',
         Ear1 = 'Loquac. Earring', -- FC
-        -- Ear2 = 'Magnetic Earring',
+        Ear2 = 'Magnetic Earring',
         Body = 'Koenig Cuirass',
         Hands = { Name = 'Dusk Gloves +1', Priority = 22 }, -- 4
         Ring1 = 'Blitz Ring',
@@ -329,8 +329,7 @@ local sets = {
         Head = 'Gallant Coronet',
         Body = 'Haubergeon +1',
         Neck = 'Shield Torque',
-        -- Ear1 = { Name = 'Magnetic Earring', Priority = 120 }, -- 8
-        Ear1 = 'Hospitaler Earring',
+        Ear1 = { Name = 'Magnetic Earring', Priority = 120 }, -- 8
         Ear2 = 'Knightly Earring', -- 9
         Hands = 'Heavy Gauntlets',
         Ring1 = 'Vilma\'s ring', -- -25
@@ -433,10 +432,8 @@ local sets = {
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
 		Feet = 'Dusk Ledelsens +1',
-		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
+		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5 '} },	
     },
-    TP_Mjollnir_Haste = {},
-
     WS = {
 		Head = 'Hecatomb Cap',
         Neck = 'Fotia Gorget',
@@ -457,7 +454,7 @@ local sets = {
 
     WS_Spirits = {},
     WS_KOR = {
-        Head = 'Hecatomb Cap',		
+        Head = 'Koenig Schaller',
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
@@ -695,7 +692,7 @@ profile.HandlePrecast = function()
         if (target.Name == me) then
             if (action.Name == 'Cure III') then
                 gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
-            elseif (action.Name == 'Cure IV') then
+            elseif (action.Name == 'Cure IV' and player.HP < (hp_in_cure - 512)) then
                 gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
             end
         end
@@ -729,7 +726,7 @@ profile.HandleMidcast = function()
         end
     elseif (action.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.Haste)
-        if (action.Name == 'Utusemi: Ichi') then
+        if (action.Name == 'Utsusemi: Ichi') then
             gFunc.EquipSet(sets.Haste_Ichi)
         end
     elseif (action.Skill == 'Enhancing Magic') then

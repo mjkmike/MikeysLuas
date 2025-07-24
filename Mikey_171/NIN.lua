@@ -99,7 +99,7 @@ local sets = {
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
         Ring1 = 'Defending Ring',
         Ring2 = { Name = 'Merman\'s Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Lamia Mantle',
+        Back = 'Lamie Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens +1',
