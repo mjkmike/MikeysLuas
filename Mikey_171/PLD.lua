@@ -468,7 +468,7 @@ local sets = {
         Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Valor breeches',
-        Feet = 'Koenig Schuhs',
+        Feet = 'Rutter Sabotons',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
     },
 
