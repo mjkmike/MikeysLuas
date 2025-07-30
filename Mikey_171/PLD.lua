@@ -20,7 +20,8 @@ local hp_in_cure = 1377
 local gallant_leggings = 'Glt. Leggings +1'
 local valor_leggings = 'Valor Leggings'
 
-local arco_de_velocidad = false
+local arco_de_velocidad = true
+local arco_de_velocidad_swap = 'Lamian Kaman'
 
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
 
@@ -107,6 +108,7 @@ local sets = {
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Koenig Schaller',
+        Range = arco_de_velocidad_swap,
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -133,8 +135,9 @@ local sets = {
         Legs = 'Coral cuisses +1',
         Feet = 'Coral Greaves +1',
     },
-    FireRes = { -- 129
+    FireRes = { -- 139
         Head = 'Green Ribbon +1', -- 10
+        Range = 'Cerberus Bow',
         Neck = 'Jeweled Collar', -- 10
         Ear1 = 'Tmph. Earring +1', -- 12
         Ear2 = 'Crimson Earring', -- 10
@@ -635,10 +638,12 @@ profile.HandleDefault = function()
         gFunc.EquipSet(sets.Cover)
     end
 
-    if (arco_de_velocidad) then
+    if (arco_de_velocidad and not (gcdisplay.IdleSet == 'MDT' or gcdisplay.IdleSet == 'FireRes' )) then
         local environment = gData.GetEnvironment()
-        if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100) then
+        if (environment.Time >= 6 and environment.Time < 18 and player.HPP < 100 and player.TP < 150) then
             gFunc.Equip('Range', 'Arco de Velocidad')
+        elseif (environment.Time <= 6 and environment.Time > 18 and player.TP < 150) then
+            gFunc.Equip('Range', arco_de_velocidad_swap)
         end
     end
 
@@ -690,7 +695,7 @@ profile.HandlePrecast = function()
     end
     local function delayCheat()
         if (target.Name == me) then
-            if (action.Name == 'Cure III') then
+            if (action.Name == 'Cure III' and player.HP < (hp_in_cure - 256)) then
                 gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
             elseif (action.Name == 'Cure IV' and player.HP < (hp_in_cure - 512)) then
                 gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
