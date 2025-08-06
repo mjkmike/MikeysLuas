@@ -3,6 +3,7 @@ local profile = {}
 local fastCastValue = 0.07 -- 0.07 7% from gear
 
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
+local vampire_earring = true;
 
 local shadow_mantle = true
 
@@ -264,7 +265,11 @@ end
 profile.HandleWeaponskill = function()
     gcmelee.DoWS()
 
-    local action = gData.GetAction()
+    -- local action = gData.GetAction()
+    local environment = gData.GetEnvironment()
+    if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
+        gFunc.Equip('Ear2', 'Vampire Earring')
+    end
 end
 
 profile.OnLoad = function()
@@ -305,9 +310,15 @@ profile.HandleMidcast = function()
 
     local action = gData.GetAction()
     if (action.Skill == 'Blue Magic') then
-        gFunc.EquipSet(sets.blu_magic);
+        gFunc.EquipSet(sets.BLU_Magic);
         -- if (blue_magic_debuffs:contains(action.Name)) then gFunc.EquipSet(sets.BluMagicAccuracy)
-        if (blue_magic_stuns:contains(action.Name)) then gFunc.EquipSet(sets.blue_Stun);
+        if (blue_magic_str:contains(action.Name)) then 
+            gFunc.EquipSet(sets.BLU_STR); 
+            local environment = gData.GetEnvironment()
+            if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
+                gFunc.Equip('Ear2', 'Vampire Earring')
+            end
+        elseif (blue_magic_stuns:contains(action.Name)) then gFunc.EquipSet(sets.blue_Stun);
         elseif (blue_magic_buffs:contains(action.Name)) then gFunc.EquipSet(sets.CMP);
         elseif (blue_magic_skill:contains(action.Name)) then gFunc.EquipSet(sets.BluSkill);
         elseif (blue_magic_cure:contains(action.Name)) then gFunc.EquipSet(sets.Cure);

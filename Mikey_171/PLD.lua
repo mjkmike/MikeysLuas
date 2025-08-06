@@ -9,6 +9,7 @@ local hercules_ring_slot = 'Ring1'
 
 local mercenarys_earring = true
 local mercenarys_earring_slot = 'Ear2'
+local vampire_earring = true
 
 local guardian_earring = true;
 local guardian_earring_slot = 'Ear2'
@@ -468,7 +469,7 @@ local sets = {
         Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Valor breeches',
-        Feet = 'Rutter Sabotons',
+        Feet = 'Rutter Sabatons',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
     },
 
@@ -564,6 +565,10 @@ profile.HandleAbility = function()
         if(player.SubJob == "WAR" and mercenarys_earring) then
             gFunc.Equip(mercenarys_earring_slot, 'Mercen. Earring')
         end
+        local environment = gData.GetEnvironment()
+        if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
+            gFunc.Equip('Ear1', 'Vampire Earring')
+        end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
         local player = gData.GetPlayer()
@@ -606,6 +611,14 @@ profile.HandleWeaponskill = function()
         if(player.SubJob == "WAR" and mercenarys_earring) then
             gFunc.Equip(mercenarys_earring_slot, 'Mercen. Earring')
         end
+        local environment = gData.GetEnvironment()
+        if (shadow_mantle and environment.DayElement == 'Dark') then
+            gFunc.Equip('Back', 'Shadow Mantle')
+        end
+    end
+    local environment = gData.GetEnvironment()
+    if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
+        gFunc.Equip('Ear2', 'Vampire Earring')
     end
 end
 

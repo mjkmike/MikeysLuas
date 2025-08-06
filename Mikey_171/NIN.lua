@@ -11,6 +11,7 @@ local shinobi_ring_slot = 'Ring1'
 
 local koga_tekko = true
 local koga_tekko_plus_one = false
+local vampire_earring = true;
 
 local uggalepih_pendant = false
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
@@ -258,8 +259,8 @@ local sets = {
     WS = {		
         Head = 'Voyager Sallet',
         Neck = 'Fotia Gorget',
-        Ear1 = 'Tmph. Earring +1',
-        Ear2 = 'Brutal Earring',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Tmph. Earring +1',
         Body = 'Haubergeon +1',
         Hands = 'Ochiudo\'s Kote',
         Ring1 = 'Harmonius Ring',
@@ -269,12 +270,25 @@ local sets = {
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
     },
-    WS_MidAcc = {},
+    WS_MidAcc = {
+        Head = 'Voyager Sallet',
+        Neck = 'Fotia Gorget',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Tmph. Earring +1',
+        Body = 'Haubergeon +1',
+        Hands = 'Ochiudo\'s Kote',
+        Ring1 = 'Harmonius Ring',
+		Ring2 = 'Rajas Ring',
+        Back = 'Cerb. Mantle +1',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
+        Legs = 'Byakko\'s Haidate',
+        Feet = 'Rutter Sabatons',
+    },
     WS_HighAcc = {
         Head = 'Optical Hat',
         Neck = 'Fotia Gorget',
-        Ear1 = 'Tmph. Earring +1',
-        Ear2 = 'Merman\'s Earring',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Tmph. Earring +1',
         Body = 'Haubergeon +1',
         Hands = 'Ochiudo\'s Kote',
         Ring1 = 'Harmonius Ring',
@@ -344,6 +358,9 @@ profile.HandleWeaponskill = function()
     end
     if (koga_tekko_plus_one and (environment.Time < 7 or environment.Time >= 17)) then
         gFunc.Equip('Hands', 'Kog. Tekko +1')
+    end
+    if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
+        gFunc.Equip('Ear1', 'Vampire Earring')
     end
 end
 
