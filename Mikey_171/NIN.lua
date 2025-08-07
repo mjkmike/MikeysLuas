@@ -12,6 +12,7 @@ local shinobi_ring_slot = 'Ring1'
 local koga_tekko = true
 local koga_tekko_plus_one = false
 local vampire_earring = true;
+local muscle_belt = ';Muscle Belt +1';
 
 local uggalepih_pendant = false
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
@@ -399,6 +400,10 @@ profile.HandleDefault = function()
 
     local player = gData.GetPlayer()
     local environment = gData.GetEnvironment()
+    
+    if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
+        gFunc.Equip('Waist', muscle_belt)
+    end
 
     if (player.Status == 'Engaged') then
         if (shinobi_ring and player.HPP <= 75 and player.TP <= 1000) then

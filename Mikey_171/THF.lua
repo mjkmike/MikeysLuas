@@ -1,6 +1,8 @@
 local profile = {}
 
 local fastCastValue = 0.00 -- 0% from gear
+local muscle_belt = 'Muscle Belt +1'
+
 
 local ta_rogue_armlets = true
 
@@ -171,6 +173,11 @@ profile.HandleDefault = function()
     gcmelee.DoDefault()
 
     local player = gData.GetPlayer()
+
+    if (player.Status == 'Idle' and player.HPP < 50 and muscle_belt ~= '') then
+        gFunc.Equip('Waist', muscle_belt)
+    end
+
     if (player.SubJob == 'NIN' and player.Status == 'Engaged') then
         gFunc.EquipSet('TP_NIN')
     end

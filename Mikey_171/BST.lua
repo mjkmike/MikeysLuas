@@ -7,7 +7,7 @@ local suppanomimi = true
 local suppanomimi_slot = 'Ear2'
 
 -- Replace these with '' if you do not have them
-local muscle_belt = ''
+local muscle_belt = 'Muscle Belt +1'
 
 local sets = {
     Idle = {

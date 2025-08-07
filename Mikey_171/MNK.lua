@@ -11,6 +11,8 @@ local temple_crown = 'Tpl. Crown +1'
 
 local melee_gaiters = 'Melee Gaiters'
 local melee_gloves = 'Mel. Gloves +1'
+local muscle_belt = 'Muscle Belt +1'
+
 
 local muscle_belt = ''
 local garden_bangles = ''
