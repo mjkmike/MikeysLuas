@@ -18,7 +18,7 @@ local blue_mage_enmity = T{'Actinic Burst','Exuviation','Fantod','Jettatura','Te
 
 local sets = {
     Idle = {
-        Head = 'Darksteel Cap +1', -- 2
+        Head = 'Coral Visor +1',
         Body = 'Mirage Jubbah',
         Neck = 'Jeweled Collar',
         Ear1 = 'Pigeon Earring',
@@ -34,7 +34,7 @@ local sets = {
     IdleALT = {
     },
     IdleDT = {
-        Head = 'Darksteel Cap +1', -- 2
+        Head = 'Coral Visor +1',
         Body = 'Mirage Jubbah',
         Neck = 'Jeweled Collar',
         Ear1 = 'Pigeon Earring',
@@ -72,9 +72,24 @@ local sets = {
         Legs = 'Crimson Cuisses',
         Feet = 'Blood Greaves',
     },
+    Movement_MDT = {
+        Legs = 'Crimson Cuisses',
+    },
     DT = {
     },
     MDT = { -- Shell IV provides 23% MDT
+        Head = 'Coral Visor +1',
+        Neck = 'Jeweled Collar',
+        Ear1 = 'Merman\'s Earring',
+        Ear2 = 'Merman\'s Earring',
+        Body = 'Mirage Jubbah',
+        Hands = 'Coral Fng. Gnt. +1',
+        Ring1 = 'Shadow Ring',
+        Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
+        Back = 'Lamie Mantle +1',
+        Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
+        Legs = 'Coral cuisses +1',
+        Feet = 'Coral Greaves +1',
     },
     FireRes = {
     },

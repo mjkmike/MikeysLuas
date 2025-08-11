@@ -9,7 +9,6 @@ local fenrirs_stone = true
 
 local sets = {
     Idle = {
-        Main = 'Tredecim Scythe',
         Ammo = 'Bomb Core',
         Neck = 'Jeweled Collar +1',
         Ear1 = 'Merman\'s Earring',
@@ -24,8 +23,6 @@ local sets = {
         Feet = 'Dst. Leggings +1',
     },
     IdleALT = {
-        Main = 'Terra\'s Staff',
-        Sub = '',
         Range = 'Rosenbogen',
         Ammo = '',
         Head = 'displaced',
@@ -283,8 +280,23 @@ local sets = {
 
     TP_LowAcc = {
         Ammo = 'Bomb Core',
-        Head = 'Homam Zucchetto',
+        Head = 'Walahra Turban',
         Neck = 'Justice Torque',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Dusk Gloves +1',
+        Ring1 = 'Toreador\'s Ring',
+        Ring2 = 'Rajas\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Sonic Belt',
+        Legs = 'Homam Cosciales',
+        Feet = 'Homam Gambieras',
+    },
+    TP_MidAcc = {
+        Ammo = 'Bomb Core',
+        Head = 'Walahra Turban',
+        Neck = 'Peacock Charm',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Abyssal Earring',
         Body = 'Haubergeon',
@@ -314,6 +326,21 @@ local sets = {
     TP_Mjollnir_Haste = {},
 
     WS = {
+        Ammo = 'Bomb Core',
+        Head = 'Chs. Burgeonet +1',
+        Neck = 'Snow Gorget',
+        Ear1 = 'Brutal Earring',
+        Ear2 = 'Abyssal Earring',
+        Body = 'Haubergeon',
+        Hands = 'Chs. Gauntlets +1',
+        Ring1 = 'Triumph Ring',
+        Ring2 = 'Toreador\'s Ring',
+        Back = 'Forager\'s Mantle',
+        Waist = 'Warwolf Belt',
+        Legs = 'Onyx Cuisses',
+        Feet = 'Chs. Sollerets +1',
+    },
+    WS_MidAcc = {
         Ammo = 'Bomb Core',
         Head = 'Chs. Burgeonet +1',
         Neck = 'Snow Gorget',
@@ -442,10 +469,6 @@ profile.HandleCommand = function(args)
         gcinclude.Message('Hate', gcdisplay.GetToggle('Hate'))
     else
         gcmelee.DoCommands(args)
-    end
-
-    if (args[1] == 'horizonmode') then
-        profile.HandleDefault()
     end
 end
 

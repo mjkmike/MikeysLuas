@@ -117,7 +117,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Shadow Ring',
         Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Lamie Mantle +1',
+        Back = 'Lamia Mantle +1',
         Waist = { Name = 'Marid Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Coral cuisses +1',
         Feet = 'Coral Greaves +1',
@@ -131,7 +131,7 @@ local sets = {
         Hands = 'Coral Fng. Gnt. +1',
         Ring1 = 'Bomb Queen ring',
         Ring2 = { Name = 'Defending Ring', Augment = { [1] = 'VIT+5'} },
-        Back = 'Lamie Mantle +1',
+        Back = 'Lamia Mantle +1',
         Waist = 'Jungle Sash',
         Legs = 'Coral cuisses +1',
         Feet = 'Coral Greaves +1',
@@ -157,7 +157,7 @@ local sets = {
         Ear1 = 'Tmph. Earring +1', -- 12
         Ear2 = 'Crimson Earring', -- 10
         Body = 'Assault Brstplate', --15
-        Hands = 'Kng. handschuhs',
+        Hands = 'Kaiser handschuhs',
         Ring1 = 'Diamond Ring', -- 9
         Ring2 = 'Shadow Ring', 
         Back = 'Shadow Mantle', -- 6
@@ -458,7 +458,7 @@ local sets = {
 
     WS_Spirits = {},
     WS_KOR = {
-        Head = 'Koenig Schaller',
+        Head = 'koenig Schaller',
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
@@ -468,10 +468,11 @@ local sets = {
 		Ring2 = { Name = 'Soil Ring', Augment = { [1] = 'VIT+5'} },
         Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
-        Legs = 'Valor breeches',
-        Feet = 'Rutter Sabatons',
+        Legs = 'koenig Diechlings',
+        Feet = 'koenig schuhs',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
     },
+
 
     Cover = {
         Head = 'Gallant Coronet',
@@ -530,7 +531,7 @@ local sets = {
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 2')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
     -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //flash')
