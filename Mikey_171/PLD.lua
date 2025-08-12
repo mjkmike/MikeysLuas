@@ -709,10 +709,10 @@ profile.HandlePrecast = function()
     end
     local function delayCheat()
         if (target.Name == me) then
-            if (action.Name == 'Cure III' and player.HP < (hp_in_cure - 256)) then
+            if (action.Name == 'Cure IV' and player.HP > (hp_in_cure - 512)) then
+                gFunc.ForceEquipSet(sets.Cheat_C4HPDown)        
+            elseif (action.Name == 'Cure III' and player.HP > (hp_in_cure - 256)) then
                 gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
-            elseif (action.Name == 'Cure IV' and player.HP < (hp_in_cure - 512)) then
-                gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
             end
         end
     end

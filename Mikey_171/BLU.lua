@@ -242,6 +242,19 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+    },
+    Cure = {
+        Head = 'Mirage Keffieyeh',
+        Neck = 'Healing Torque',
+		Ear1 = 'Harvest Earring',
+        Body = 'Magus Jubbah',
+        Hands = 'Devotee\'s Mitts',
+        Ring1 = 'Aqua Ring',
+		Ring2 = 'Aqua Ring',
+        Back = 'Beak Mantle +1',
+        Waist = 'ryl.kgt. Belt',
+        Legs = 'Magic Cuisses',
+        Feet = 'Power Sandals',
     }
 }
 profile.Sets = sets
