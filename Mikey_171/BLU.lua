@@ -52,6 +52,7 @@ local sets = {
     Resting = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
+        Legs = 'Libra Subligar'
     },
     Town = {
         Head = 'Darksteel Cap +1',
@@ -245,16 +246,16 @@ local sets = {
     },
     Cure = {
         Head = 'Mirage Keffieyeh',
-        Neck = 'Healing Torque',
+        Neck = 'Justice Badge',
 		Ear1 = 'Harvest Earring',
-        Body = 'Magus Jubbah',
+        Body = 'Crm. Scale Mail',
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Aqua Ring',
 		Ring2 = 'Aqua Ring',
         Back = 'Beak Mantle +1',
         Waist = 'ryl.kgt. Belt',
         Legs = 'Magic Cuisses',
-        Feet = 'Power Sandals',
+        Feet = 'Errant Pigaches',
     }
 }
 profile.Sets = sets
