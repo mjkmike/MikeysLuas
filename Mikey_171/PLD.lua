@@ -16,6 +16,8 @@ local guardian_earring_slot = 'Ear2'
 local guardian_ring = true
 local guardian_ring_slot = 'Ring1'
 local hp_in_cure = 1377
+local cure_iv_hp_threshold = 450
+local cure_iii_hp_threadhold = 220
 
 -- Replace these with '' if you do not have them
 local gallant_leggings = 'Glt. Leggings +1'
@@ -47,7 +49,7 @@ local sets = {
     IdleALT = {
     },
     IdleDT = {
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 25 },
@@ -69,7 +71,7 @@ local sets = {
         Waist = 'Hierarch Belt'
     },
     Town = {
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Tmph. Earring +1',
         Ear2 = 'Hades Earring +1',
@@ -94,7 +96,7 @@ local sets = {
     },
 
     DT = {
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
         Body = 'Koenig Cuirass',
         Neck = { Name = 'Shield Torque', Priority = 100 },
         Ear1 = 'Pigeon Earring',
@@ -108,7 +110,7 @@ local sets = {
         Feet = { Name = 'Glt. Leggings +1', Priority = 90 },
     },
     MDT = { -- Shell IV provides 23% MDT
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
         Range = arco_de_velocidad_swap,
         Neck = 'Jeweled Collar',
         Ear1 = 'Merman\'s Earring',
@@ -123,7 +125,7 @@ local sets = {
         Feet = 'Coral Greaves +1',
     },
     Meteor = {
-        Head = 'Koenig Schaller',
+        Head = 'Kaiser Schaller',
 		Neck = 'Ajase beads',
         Ear1 = 'Merman\'s Earring',
         Ear2 = 'Merman\'s Earring',
@@ -251,7 +253,7 @@ local sets = {
         Feet = 'Valor Leggings',
     },
     SIRD = {
-        Head = { Name = 'Koenig Schaller', Priority = 30 },
+        Head = { Name = 'Kaiser Schaller', Priority = 30 },
         -- Neck = 'Willpower Torque', -- 5
         Ear1 = 'Magnetic Earring', -- 8
         Ear2 = 'Knightly Earring', -- 9
@@ -373,7 +375,7 @@ local sets = {
         Feet = 'Glt. Leggings +1',
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
-    Cheat_C4HPUp = { -- 1609
+    Cheat_C4HPUp = { -- 1609 20 enmity
         Head = 'Aegishjalmr',
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
@@ -458,7 +460,7 @@ local sets = {
 
     WS_Spirits = {},
     WS_KOR = {
-        Head = 'koenig Schaller',
+        Head = 'Kaiser Schaller',
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
@@ -478,7 +480,7 @@ local sets = {
         Head = 'Gallant Coronet',
         Body = 'Valor Surcoat',
     },
-    Cure = {
+    Cure = { --32 enmity
         Head = { Name = 'Aegishjalmr', Priority = 100 },
         Neck = 'Harmonia\'s Torque',
         Ear1 = 'Hospitaler Earring',
@@ -709,9 +711,9 @@ profile.HandlePrecast = function()
     end
     local function delayCheat()
         if (target.Name == me) then
-            if (action.Name == 'Cure IV' and player.HP > (hp_in_cure - 512)) then
+            if (action.Name == 'Cure IV' and player.HP > (hp_in_cure - cure_iv_hp_threshold)) then
                 gFunc.ForceEquipSet(sets.Cheat_C4HPDown)        
-            elseif (action.Name == 'Cure III' and player.HP > (hp_in_cure - 256)) then
+            elseif (action.Name == 'Cure III' and player.HP > (hp_in_cure - cure_iii_hp_threadhold)) then
                 gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
             end
         end

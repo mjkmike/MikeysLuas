@@ -15,6 +15,7 @@ local blue_magic_skill = T{'Metallic Body','Diamondhide','Magic Barrier','Occult
 local blue_magic_diffuse = T{'Erratic Flutter','Carcharian Verve','Harden Shell','Mighty Guard'}
 local blue_magic_cure = T{'Pollen','Healing Breeze','Wild Carrot','Magic Fruit','Plenilune Embrace'}
 local blue_mage_enmity = T{'Actinic Burst','Exuviation','Fantod','Jettatura','Temporal Shift'}
+local blue_mage_mnd = T{'Magic Hammer'}
 
 local sets = {
     Idle = {
@@ -220,6 +221,7 @@ local sets = {
         Feet = 'Rutter Sabatons',
     },
     BLU_Magic = {
+        Head = 'Mirage Keffiyeh',
         Body = 'Magus Jubbah',
     },
     BLU_Stun = {
@@ -249,6 +251,20 @@ local sets = {
         Neck = 'Justice Badge',
 		Ear1 = 'Harvest Earring',
         Body = 'Crm. Scale Mail',
+        Hands = 'Devotee\'s Mitts',
+        Ring1 = 'Aqua Ring',
+		Ring2 = 'Aqua Ring',
+        Back = 'Beak Mantle +1',
+        Waist = 'ryl.kgt. Belt',
+        Legs = 'Magic Cuisses',
+        Feet = 'Errant Pigaches',
+    },
+    Blu_Mnd = {
+        Head = 'Mirage Keffieyeh',
+        Neck = 'Justice Badge',
+		Ear1 = 'Harvest Earring',
+        Ear2 = 'Moldavite Earring',
+        Body = 'Magus Jubbah',
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Aqua Ring',
 		Ring2 = 'Aqua Ring',
@@ -347,11 +363,16 @@ profile.HandleMidcast = function()
             if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
                 gFunc.Equip('Ear2', 'Vampire Earring')
             end
-        elseif (blue_magic_stuns:contains(action.Name)) then gFunc.EquipSet(sets.blue_Stun);
-        elseif (blue_magic_buffs:contains(action.Name)) then gFunc.EquipSet(sets.CMP);
-        elseif (blue_magic_skill:contains(action.Name)) then gFunc.EquipSet(sets.BluSkill);
-        elseif (blue_magic_cure:contains(action.Name)) then gFunc.EquipSet(sets.Cure);
-        elseif (blue_mage_enmity:contains(action.Name)) then gFunc.EquipSet(sets.Enmity);
+        elseif (blue_magic_stuns:contains(action.Name)) then gFunc.EquipSet(sets.blue_Stun)
+        elseif (blue_magic_buffs:contains(action.Name)) then gFunc.EquipSet(sets.CMP)
+        elseif (blue_magic_skill:contains(action.Name)) then gFunc.EquipSet(sets.BluSkill)
+        elseif (blue_magic_cure:contains(action.Name)) 
+            then gFunc.EquipSet(sets.Cure)
+            gcmelee.equipObi(action)
+        elseif (blue_mage_enmity:contains(action.Name)) then gFunc.EquipSet(sets.Enmity)
+        elseif (blue_mage_mnd:contains(action.Name)) then 
+            gFunc.EquipSet(sets.Blu_Mnd)        
+            gcmelee.equipObi(action)
         end
     elseif (action.Skill == 'Ninjutsu') then
         gFunc.EquipSet(sets.Haste)
