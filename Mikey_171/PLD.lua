@@ -433,7 +433,7 @@ local sets = {
         Body = 'Haubergeon +1',
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
         Ring1 = 'Toreador\'s Ring',
-		Ring2 = 'Rajas Ring',
+		Ring2 = 'Toreador\'s Ring',
         Back = 'Settler\'s Cape',
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
@@ -456,7 +456,9 @@ local sets = {
         ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
     },
     WS_MidAcc = {},
-    WS_HighAcc = {},
+    WS_HighAcc = {
+        
+    },
 
     WS_Spirits = {},
     WS_KOR = {

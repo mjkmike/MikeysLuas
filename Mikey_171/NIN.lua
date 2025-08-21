@@ -226,6 +226,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens +1',
+        ammo = 'Nokizaru Shuriken'
     },
     TP_MidAcc = {		
 		Head = 'Walahra Turban',
@@ -240,6 +241,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens +1',
+        ammo = 'Nokizaru Shuriken'
     },
     TP_HighAcc = {		
         Head = 'Optical hat',
@@ -249,11 +251,12 @@ local sets = {
         Body = 'Haubergeon +1',
         Hands = { Name = 'Dusk Gloves +1', Augment = { [1] = 'DEX+5'} },
 		Ring1 = 'Toreador\'s Ring',
-		Ring2 = 'Rajas Ring',
+		Ring2 = 'Toreador\'s Ring',
         Back = 'Amemet Mantle +1',
         Waist = 'Life Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Dusk Ledelsens +1',
+        ammo = 'Nokizaru Shuriken'
     },
     TP_Mjollnir_Haste = {},
 
@@ -270,6 +273,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Bomb Core'
     },
     WS_MidAcc = {
         Head = 'Voyager Sallet',
@@ -284,6 +288,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Bomb Core'
     },
     WS_HighAcc = {
         Head = 'Optical Hat',
@@ -298,6 +303,7 @@ local sets = {
         Waist = 'life Belt',
         Legs = 'Byakko\'s Haidate',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Bomb Core'
     },
     WS_BladeJin = {},
     WS_BladeKu = {},

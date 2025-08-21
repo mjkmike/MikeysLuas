@@ -53,6 +53,7 @@ local sets = {
     Resting = {
         Ear1 = 'Relaxing Earring',
         Ear2 = 'Magnetic Earring',
+        Waist = 'hierarch belt',
         Legs = 'Libra Subligar'
     },
     Town = {
@@ -172,7 +173,7 @@ local sets = {
         Body = 'Mirage Jubbah',
         Hands = 'Dusk Gloves +1',
         Ring1 = 'Toreador\'s Ring',
-        Ring2 = 'Rajas Ring',
+        Ring2 = 'Toreador\'s Ring',
         Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
@@ -207,16 +208,16 @@ local sets = {
         Feet = 'Rutter Sabatons',
     },
     WS_HighAcc = {
-        Head = 'Voyager Sallet',
+        Head = 'Optical Hat',
         Neck = 'Fotia Gorget',
         Ear1 = 'Brutal Earring',
         Ear2 = 'Tmph. Earring +1',
         Body = 'Magus Jubbah',
         Hands = 'Alkyoneus\'s Brc.',
-        Ring1 = 'Harmonius Ring',
-		Ring2 = 'Rajas Ring',
+        Ring1 = 'Toreador\'s Ring',
+		Ring2 = 'Toreador\'s Ring',
         Back = 'Cerb. Mantle +1',
-        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
+        Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
     },
@@ -246,6 +247,20 @@ local sets = {
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
     },
+    BLU_STR_HIGH_ACC = {
+        Head = 'Optical Hat',
+        Neck = 'Peacock Charm',
+        Ear1 = 'Suppanomimi',
+        Ear2 = 'Tmph. Earring +1',
+        Body = 'Magus Jubbah',
+        Hands = 'Alkyoneus\'s Brc.',
+        Ring1 = 'Toreador\'s Ring',
+		Ring2 = 'Toreador\'s Ring',
+        Back = 'Cerb. Mantle +1',
+        Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
+        Legs = 'Mirage Shalwar',
+        Feet = 'Rutter Sabatons',
+    },
     Cure = {
         Head = 'Mirage Keffieyeh',
         Neck = 'Justice Badge',
@@ -254,7 +269,7 @@ local sets = {
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Aqua Ring',
 		Ring2 = 'Aqua Ring',
-        Back = 'Beak Mantle +1',
+        Back = 'Rainbow Cape',
         Waist = 'ryl.kgt. Belt',
         Legs = 'Magic Cuisses',
         Feet = 'Errant Pigaches',
@@ -268,7 +283,7 @@ local sets = {
         Hands = 'Devotee\'s Mitts',
         Ring1 = 'Aqua Ring',
 		Ring2 = 'Aqua Ring',
-        Back = 'Beak Mantle +1',
+        Back = 'Rainbow Cape',
         Waist = 'ryl.kgt. Belt',
         Legs = 'Magic Cuisses',
         Feet = 'Errant Pigaches',
@@ -277,7 +292,7 @@ local sets = {
 profile.Sets = sets
 
 profile.SetMacroBook = function()
-    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 1')
+    AshitaCore:GetChatManager():QueueCommand(1, '/macro book 3')
     AshitaCore:GetChatManager():QueueCommand(1, '/macro set 1')
 
     -- AshitaCore:GetChatManager():QueueCommand(-1, '/bind F9 //flash')
@@ -358,7 +373,11 @@ profile.HandleMidcast = function()
         gFunc.EquipSet(sets.BLU_Magic);
         -- if (blue_magic_debuffs:contains(action.Name)) then gFunc.EquipSet(sets.BluMagicAccuracy)
         if (blue_magic_str:contains(action.Name)) then 
-            gFunc.EquipSet(sets.BLU_STR); 
+            local sa = gData.GetBuffCount('Sneak Attack')
+            gFunc.EquipSet(sets.BLU_STR);
+            if(gcdisplay.IdleSet == 'HighAcc' and sa == 0) then
+                gFunc.EquipSet(sets.BLU_STR_HIGH_ACC);
+            end
             local environment = gData.GetEnvironment()
             if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
                 gFunc.Equip('Ear2', 'Vampire Earring')
