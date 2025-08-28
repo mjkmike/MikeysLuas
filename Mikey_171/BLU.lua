@@ -31,6 +31,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
         Feet = 'Blood Greaves',
+        Ammo = 'Fly Lure'
     },
     IdleALT = {
     },
@@ -47,6 +48,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
         Feet = 'Blood Greaves',
+        Ammo = 'Fly Lure'
     },
     IdleALTDT = {
     },
@@ -69,6 +71,7 @@ local sets = {
         Feet = 'Glt. Leggings +1',
         Ring1 = 'Toreador\'s Ring',
 		Ring2 = 'Harmonius Ring',
+        Ammo = 'Frog Lure'
     },
     Movement = {
         Hands = 'Dst. Mittens +1',
@@ -79,6 +82,19 @@ local sets = {
         Legs = 'Crimson Cuisses',
     },
     DT = {
+        Head = 'Homam Zucchetto',
+        Body = 'Crimson Scale Mail',
+        Neck = 'Peacock Charm',
+        Ear1 = 'Pigeon Earring',
+        Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },
+        Hands = 'Dst. Mittens +1',
+        Ring1 = 'Defending Ring',
+        Ring2 = { Name = 'Sattva Ring', Priority = 100 },
+        Back = 'Shadow Mantle',
+        Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
+        Legs = { Name = 'Dst. Subligar +1', Priority = 10 },
+        Feet = 'Blood Greaves',
+        Ammo = 'Fly Lure'
     },
     MDT = { -- Shell IV provides 23% MDT
         Head = 'Coral Visor +1',
@@ -150,6 +166,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
+        Ammo = 'Frog Lure'
     },
     TP_MidAcc = {
         Head = 'Walahra Turban',
@@ -164,6 +181,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
+        Ammo = 'Frog Lure'
     },
     TP_HighAcc = {
         Head = 'Optical Hat',
@@ -178,6 +196,7 @@ local sets = {
         Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
+        Ammo = 'Shrimp Lure'
     },
     WS = {
 		Head = 'Voyager Sallet',
@@ -192,6 +211,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Frog Lure'
     },
     WS_MidAcc = {
         Head = 'Voyager Sallet',
@@ -206,6 +226,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Frog Lure'
     },
     WS_HighAcc = {
         Head = 'Optical Hat',
@@ -220,6 +241,7 @@ local sets = {
         Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Shrimp Lure'
     },
     BLU_Magic = {
         Head = 'Mirage Keffiyeh',
@@ -232,6 +254,7 @@ local sets = {
         Ring1 = 'Toreador\'s Ring',
         Ring2 = 'Rajas Ring',
         Waist = 'Life Belt',
+        Ammo = 'Shrimp Lure'
     },
     BLU_STR = {
         Head = 'Voyager Sallet',
@@ -246,6 +269,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Frog Lure'
     },
     BLU_STR_HIGH_ACC = {
         Head = 'Optical Hat',
@@ -260,6 +284,7 @@ local sets = {
         Waist = { Name = 'Life Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Mirage Shalwar',
         Feet = 'Rutter Sabatons',
+        Ammo = 'Shrimp Lure'
     },
     Cure = {
         Head = 'Mirage Keffieyeh',
