@@ -10,7 +10,6 @@ local hercules_ring_slot = 'Ring1'
 local mercenarys_earring = true
 local mercenarys_earring_slot = 'Ear2'
 local vampire_earring = true
-local vampire_earring_2 = true
 
 local guardian_earring = true;
 local guardian_earring_slot = 'Ear2'
@@ -573,10 +572,8 @@ profile.HandleAbility = function()
         end
         local environment = gData.GetEnvironment()
         if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
-            gFunc.Equip('Ear1', 'Vampire Earring')
-        end
-        if (vampire_earring_2 and (environment.Time < 6 or environment.Time >= 18)) then
-            gFunc.Equip('Ear2', 'Vampire Earring')
+            gFunc.Equip('Ear1', {name = 'Vampire Earring', Augment = { [1] = 'VIT+5'}})
+            gFunc.Equip('Ear2', {name = 'Vampire Earring', Augment = { [1] = 'STR+5'}})
         end
     elseif (action.Name == 'Shield Bash' and valor_gauntlets ~= '') then
         gFunc.EquipSet(sets.ShieldBash)
@@ -627,10 +624,7 @@ profile.HandleWeaponskill = function()
     end
     local environment = gData.GetEnvironment()
     if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
-        gFunc.Equip('Ear2', 'Vampire Earring')
-    end
-    if (vampire_earring_2 and (environment.Time < 6 or environment.Time >= 18)) then
-        gFunc.Equip('Ear2', 'Vampire Earring')
+        gFunc.Equip('Ear2', {name = 'Vampire Earring', Augment = { [1] = 'VIT+5'}})
     end
 end
 

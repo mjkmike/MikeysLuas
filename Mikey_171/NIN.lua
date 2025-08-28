@@ -367,7 +367,7 @@ profile.HandleWeaponskill = function()
         gFunc.Equip('Hands', 'Kog. Tekko +1')
     end
     if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
-        gFunc.Equip('Ear1', 'Vampire Earring')
+        {name = 'Vampire Earring', Augment = { [1] = 'STR+5'}}
     end
 end
 
