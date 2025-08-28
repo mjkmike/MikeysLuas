@@ -12,7 +12,7 @@ local shinobi_ring_slot = 'Ring1'
 local koga_tekko = true
 local koga_tekko_plus_one = false
 local vampire_earring = true;
-local muscle_belt = ';Muscle Belt +1';
+local muscle_belt = 'Muscle Belt +1';
 
 local uggalepih_pendant = false
 local warlocks_mantle = false -- Don't add 2% to fastCastValue to this as it is SJ dependant
@@ -367,7 +367,7 @@ profile.HandleWeaponskill = function()
         gFunc.Equip('Hands', 'Kog. Tekko +1')
     end
     if (vampire_earring and (environment.Time < 6 or environment.Time >= 18)) then
-        {name = 'Vampire Earring', Augment = { [1] = 'STR+5'}}
+        gFunc.Equip('Ear2', {name = 'Vampire Earring', Augment = { [1] = 'STR+5'}})
     end
 end
 
