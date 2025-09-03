@@ -408,7 +408,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
-		Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },
+		Ammo = { Name = 'Wooden Arrow', Augment = { [1] = 'STR+5'} },
     },
     TP_MidAcc = {
         Head = 'Walahra Turban',
@@ -423,7 +423,7 @@ local sets = {
         Waist = { Name = 'Speed Belt', Augment = { [1] = 'DEX+5'} },
         Legs = 'Homam Cosciales',
         Feet = 'Dusk Ledelsens +1',
-		Ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },
+		Ammo = { Name = 'Wooden Arrow', Augment = { [1] = 'STR+5'} },
     },
     TP_HighAcc = {
         Head = 'Optical Hat',
@@ -453,7 +453,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Valor breeches',
         Feet = 'Rutter Sabatons',
-        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5'} },	
+        ammo = { Name = 'Wooden Arrow', Augment = { [1] = 'STR+5'} },	
     },
     WS_MidAcc = {},
     WS_HighAcc = {
