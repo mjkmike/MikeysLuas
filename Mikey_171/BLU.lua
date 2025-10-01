@@ -82,7 +82,7 @@ local sets = {
     },
     DT = {
         Head = 'Homam Zucchetto',
-        Body = 'Crimson Scale Mail',
+        Body = 'Crm. Scale Mail',
         Neck = 'Peacock Charm',
         Ear1 = 'Pigeon Earring',
         Ear2 = { Name = 'Bloodbead Earring', Priority = 100 },

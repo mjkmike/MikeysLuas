@@ -471,7 +471,7 @@ profile.HandleMidcast = function()
     if (action.Skill == 'Ninjutsu') then
         if (NinDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.NinDebuff)
-            if(gcdisplay.GetCycle('Staff') == 'staff') then
+            if(gcdisplay.GetCycle('Staff') == 'Staff') then
                 gcmelee.equipStaff(action)
             end
             gcmelee.equipObi(action)
@@ -483,7 +483,7 @@ profile.HandleMidcast = function()
             if (action.MppAftercast < 51) and uggalepih_pendant then
                 gFunc.Equip('Neck', 'Uggalepih Pendant')
             end
-            if(gcdisplay.GetCycle('Staff') == 'staff') then
+            if(gcdisplay.GetCycle('Staff') == 'Staff') then
                 gcmelee.equipStaff(action)
             end
             gcmelee.equipObi(action)
@@ -492,7 +492,7 @@ profile.HandleMidcast = function()
         if (DrkDebuffs:contains(action.Name)) then
             gFunc.EquipSet(sets.Hate)
         end
-            if(gcdisplay.GetCycle('Staff') == 'staff') then
+            if(gcdisplay.GetCycle('Staff') == 'Staff') then
                 gcmelee.equipStaff(action)
             end
             gcmelee.equipObi(action)
