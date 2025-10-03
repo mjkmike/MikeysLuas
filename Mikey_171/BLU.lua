@@ -74,11 +74,11 @@ local sets = {
     },
     Movement = {
         Hands = 'Dst. Mittens +1',
-        Legs = 'Crimson Cuisses',
+        Legs = 'Blood Cuisses',
         Feet = 'Blood Greaves',
     },
     Movement_MDT = {
-        Legs = 'Crimson Cuisses',
+        Legs = 'Blood Cuisses',
     },
     DT = {
         Head = 'Homam Zucchetto',

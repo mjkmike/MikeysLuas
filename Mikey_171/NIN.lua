@@ -172,7 +172,7 @@ local sets = {
         Ring2 = 'Sattva Ring',
 		Back = 'Cerb. Mantle +1',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
-        Legs = 'Yasha Hakama',
+        Legs = 'Arhat\'s Hakama +1',
         Feet = 'Yasha sune-ate',
     },
     NinDebuff = {        

@@ -86,12 +86,12 @@ local sets = {
     },
     Movement = {
         Hands = 'Kaiser handschuhs',
-        Legs = 'Crimson Cuisses',
+        Legs = 'Blood Cuisses',
         Feet = 'Koenig Schuhs',
     },
     Movement_MDT = {
         Hands = 'Coral Fng. Gnt. +1',
-        Legs = 'Crimson Cuisses',
+        Legs = 'Blood Cuisses',
         Feet = 'Koenig Schuhs',
     },
 
@@ -145,12 +145,12 @@ local sets = {
         Ear1 = 'Tmph. Earring +1', -- 12
         Ear2 = 'Crimson Earring', -- 10
         Body = 'Assault Brstplate', -- 15
-        --Hands = 'Tarasque Mitts +1', 
+        --Hands = 'Tarasque Mitts +1',
         Ring1 = 'Shadow Ring',
         Ring2 = 'Harmonius Ring', -- 10
         Back = 'Cerb. Mantle +1', -- 15
         Waist = 'Water Belt', -- 20
-        Legs = 'Crimson Cuisses', -- 20
+        Legs = 'Blood Cuisses', -- 20
         Feet = 'Power Sandals', -- 7
     },
     IceRes = { -- 107
@@ -161,7 +161,7 @@ local sets = {
         Body = 'Assault Brstplate', --15
         Hands = 'Kaiser handschuhs',
         Ring1 = 'Diamond Ring', -- 9
-        Ring2 = 'Shadow Ring', 
+        Ring2 = 'Shadow Ring',
         Back = 'Shadow Mantle', -- 6
         Waist = 'Fire Belt', -- 20
         -- Legs = 'Feral Trousers', -- 6
@@ -353,7 +353,7 @@ local sets = {
         Body = 'Valor Surcoat',
         Hands = 'Valor Gauntlets',
 		Ring1 = 'Bomb Queen ring',
-		Ring2 = 'Sattva Ring',	
+		Ring2 = 'Sattva Ring',
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
 		Back = 'Cerb. Mantle +1',
         Legs = 'Valor Breeches',
@@ -438,7 +438,7 @@ local sets = {
         Waist = 'Life Belt',
         Legs = 'Homam Cosciales',
 		Feet = 'Dusk Ledelsens +1',
-		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5 '} },	
+		ammo = { Name = 'Iron Arrow', Augment = { [1] = 'STR+5 '} },
     },
     WS = {
 		Head = 'Hecatomb Cap',
@@ -453,11 +453,11 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'STR+5'} },
         Legs = 'Valor breeches',
         Feet = 'Rutter Sabatons',
-        ammo = { Name = 'Wooden Arrow', Augment = { [1] = 'STR+5'} },	
+        ammo = { Name = 'Wooden Arrow', Augment = { [1] = 'STR+5'} },
     },
     WS_MidAcc = {},
     WS_HighAcc = {
-        
+
     },
 
     WS_Spirits = {},
@@ -474,7 +474,7 @@ local sets = {
         Waist = { Name = 'Warwolf Belt', Augment = { [1] = 'VIT+5'} },
         Legs = 'Kaiser Diechlings',
         Feet = 'koenig schuhs',
-        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },	
+        ammo = { Name = 'Iron Arrow', Augment = { [1] = 'VIT+5'} },
     },
 
 
@@ -499,7 +499,7 @@ local sets = {
     },
     Divine = {},
     Rampart = { -- Rampart gives VIT x2 damage shield in era
-        Head = 'Valor Coronet',		
+        Head = 'Valor Coronet',
         Neck = 'Shield Torque',
         Ear1 = 'Pigeon Earring',
         Ear2 = 'Bloodbead Earring',
@@ -695,16 +695,16 @@ profile.HandlePrecast = function()
 
     local cheatDelay = 0
     if (player.SubJob == "RDM" and warlocks_mantle) then
-        if(action.Skill == 'Healing Magic') then 
+        if(action.Skill == 'Healing Magic') then
             cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue + 0.02, true)
-        else 
+        else
             cheatDelay = gcmelee.DoPrecast(fastCastValue + 0.02)
         end
         gFunc.Equip('Back', 'Warlock\'s Mantle')
     else
-        if(action.Skill == 'Healing Magic') then 
+        if(action.Skill == 'Healing Magic') then
             cheatDelay = gcmelee.DoPrecast(fastCastValue + cureCastValue, true)
-        else 
+        else
             cheatDelay = gcmelee.DoPrecast(fastCastValue)
         end
     end
@@ -715,7 +715,7 @@ profile.HandlePrecast = function()
     local function delayCheat()
         if (target.Name == me) then
             if (action.Name == 'Cure IV' and player.HP > (hp_in_cure - cure_iv_hp_threshold)) then
-                gFunc.ForceEquipSet(sets.Cheat_C4HPDown)        
+                gFunc.ForceEquipSet(sets.Cheat_C4HPDown)
             elseif (action.Name == 'Cure III' and player.HP > (hp_in_cure - cure_iii_hp_threadhold)) then
                 gFunc.ForceEquipSet(sets.Cheat_C3HPDown)
             end
